@@ -7,7 +7,7 @@ Thought Process:
   * If we are smart however, maybe we can bring this down to O(n<sup>2</sup>)?
 * A valid triangle consists of 3 sides `a`, `b`, `c` such that `a + b > c`, for all possible assignments of `a`, `b`, `c` to each side. 
 * This is very similar to 3Sum. 
-  * How about, we sort in descending order. This way, if we move from left-to-right, we know  the maximum size `c` that `a + b` must be greater than
+  * How about, we sort in descending order. This way, if we move from left-to-right, we know  the maximum size `c` that `a + b` must be greater than.
   
 ```
 class Solution:
