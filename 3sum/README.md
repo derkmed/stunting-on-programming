@@ -33,9 +33,9 @@ class Solution:
               l += 1
             while r > l and nums[r] == nums[r - 1]:
               r -= 1
-            
             l += 1
             r -= 1
+            
       return triplets       
 ```
 
