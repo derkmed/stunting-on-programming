@@ -39,7 +39,7 @@ class Solution:
       return triplets       
 ```
 
-T=O(n<sup>2</sup>)
+T=O(n<sup>2</sup>)<br>
 S=O(n<sup>2</sup>)
 
 # Valid Triangle Number
@@ -67,5 +67,5 @@ class Solution:
           k -= 1
     return count_result
 ```
-T=O(n<sup>2</sup>)
+T=O(n<sup>2</sup>)<br>
 S=O(1)
