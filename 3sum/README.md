@@ -3,13 +3,13 @@
 
 Thought Process:
 * There are nC3 combinations. That leads to approx O(n<sup>3</sup>) iterations.
- * If we are smart however, maybe we can bring this down to O(n<sup>2</sup>)?
+  * If we are smart however, maybe we can bring this down to O(n<sup>2</sup>)?
 * What if we first sort the list?
- * We can iterate through each element `i` in `[0, n - 2)` and for each element, we can have a shrinking window from `[i + 1, n - 1]`
+  * We can iterate through each element `i` in `[0, n - 2)` and for each element, we can have a shrinking window from `[i + 1, n - 1]`
 * We need to consider at what point can we immediately break out? 
- * When the smallest number is larger than 0, there's no point continuing
+  * When the smallest number is larger than 0, there's no point continuing
 * We need to consider possible edge cases
- * There may be duplicate elements, and we do not want to return duplicate triplets.
+  * There may be duplicate elements, and we do not want to return duplicate triplets.
 
 ```
 class Solution:
