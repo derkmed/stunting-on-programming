@@ -23,11 +23,10 @@ class Solution:
 
 ##### Question: Given a non-negative index k where k ≤ 33, return the kth index row of the Pascal's triangle. (Note that the row index starts from 0)
 
-Similar to the above. However, now we only need to keep one row at a time:
+Similar to the above. However, now we only need to keep one row at a time: This time though, it is easier because we know that "0" refers to the first row!
 ```
 class Solution:
     def getRow(self, row_index: int) -> List[int]:
-      
       row = [1]
       for _ in range(row_index):
         row = [x + y for x,y in zip([0] + row, row + [0])]
