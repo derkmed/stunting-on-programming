@@ -1,6 +1,6 @@
 # Pascal's Triangle I 
 
-##### Question: Given a non-negative integer numRows, generate the first numRows of Pascal's triangle.
+<b>Question: Given a non-negative integer numRows, generate the first numRows of Pascal's triangle.</b>
 
 Thought Process
 * Need to keep a list of lists. 
@@ -21,7 +21,7 @@ class Solution:
 
 # Pascal's Triangle II
 
-##### Question: Given a non-negative index k where k ≤ 33, return the kth index row of the Pascal's triangle. (Note that the row index starts from 0)
+<b>Question: Given a non-negative index k where k ≤ 33, return the kth index row of the Pascal's triangle. (Note that the row index starts from 0)</b>
 
 Similar to the above. However, now we only need to keep one row at a time: This time though, it is easier because we know that "0" refers to the first row!
 ```
