@@ -42,6 +42,42 @@ class Solution:
 T=O(n<sup>2</sup>)<br>
 S=O(n<sup>2</sup>)
 
+# 3Sum Closest
+
+<b>Question: Given an array nums of n integers and an integer target, find three integers in nums such that the sum is closest to target. Return the sum of the three integers. You may assume that each input would have exactly one solution.</b>
+
+Thought Process:
+* Similar to regular 3Sum, but now we want the value closest to `target` as opposed to `0`
+* Start with the initial default solution (`nums[0] + nums[1] + nums[2]`) as a placeholder and then run the regular 3Sum logic from there.
+
+```
+class Solution:
+    def threeSumClosest(self, nums: List[int], target: int) -> int:
+        nums, n = sorted(nums), len(nums)
+        solution = nums[0] + nums[1] + nums[2]
+        solution_distance = target - solution
+        
+        for i in range(0, n - 2):
+          l, r = i + 1, n - 1   
+          while l < r:
+            curr_sum = nums[i] + nums[l] + nums[r]
+            candidate_dist = abs(curr_sum - target)
+            if (candidate_dist < solution_distance): 
+                solution, solution_distance = curr_sum, candidate_dist
+            if (curr_sum < target):
+              l += 1
+            elif (curr_sum > target):
+              r -= 1
+            else:
+              return curr_sum
+              
+        return solution
+```
+
+T=O(n<sup>2</sup>)<br>
+S=O(1)
+
+
 # Valid Triangle Number
 
 <b>Question: Given an array consisting of non-negative integers, your task is to count the number of triplets chosen from the array that can make triangles if we take them as side lengths of a triangle.</b>
