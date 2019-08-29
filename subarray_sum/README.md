@@ -5,7 +5,7 @@
 <b>Example:<br> 
 Input:nums = [1,1,1], k = 2<br>
 Output: 2<br>  
-<b>
+</b>
 
 Thought Process:
 * The naive way would be to run through O(n<sup>2</sup>) possibilities. There are multiple ways to do this:
