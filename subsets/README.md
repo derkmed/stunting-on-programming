@@ -30,5 +30,5 @@ class Solution:
       subsets += [subset + [num] for subset in subsets]
     return subsets
 ```
-T = O(2<sup>n</sup>)
-T = O(2<sup>n</sup>)
+T = O(2<sup>n</sup>)<br>
+S = O(2<sup>n</sup>)
