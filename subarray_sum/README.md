@@ -1,11 +1,9 @@
 # Subarray Sum Equals K
 
-<b>Question: Given an array of integers and an integer k, you need to find the total number of continuous subarrays whose sum equals to k.</b>
-
-<b>Example:<br> 
+<b>Question: Given an array of integers and an integer k, you need to find the total number of continuous subarrays whose sum equals to k.<br>
+Example:<br> 
 Input:nums = [1,1,1], k = 2<br>
-Output: 2<br>  
-</b>
+Output: 2<br></b>
 
 Thought Process:
 * The naive way would be to run through O(n<sup>2</sup>) possibilities. There are multiple ways to do this:
