@@ -16,3 +16,18 @@ Output:
   []
 ]
 </b>
+
+Thought Process:
+* You add an element or you do not
+* Iterate through each element and update based on past information!
+
+```
+class Solution:
+  def subsets(self, nums: List[int]) -> List[List[int]]:
+    subsets = [[]]
+    for num in nums:
+      subsets += [subset + [num] for subset in subsets]
+    return subsets
+```
+T = O(2<sup>n</sup>)
+T = O(2<sup>n</sup>)
