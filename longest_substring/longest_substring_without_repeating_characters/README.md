@@ -8,7 +8,7 @@ Explanation: The answer is "abc", with the length of 3.
 </b>
 
 Thought Process:
-* Keep a window w/`left`+`right` pointers and a dictionary lookup table from seen characters and their corresponding indices
+* Keep a window with `left`+`right` pointers and a dictionary lookup table from seen characters and their corresponding indices
 * Whenever we come across a character we've already seen, `left` can jump to the location of that character's mapped index + 1 (the next index)
 
 ```
