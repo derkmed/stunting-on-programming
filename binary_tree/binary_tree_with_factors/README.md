@@ -20,7 +20,6 @@ class Solution:
     def numFactoredBinaryTrees(self, A: List[int]) -> int:
       dp = {}
       for a in sorted(A):
-        # for all elements seen, aggregate them into dp[a] if they are a factor
         dp[a] = sum(dp[k] * dp.get(a / k, 0)  for k in dp if a % k == 0) + 1
       return sum(dp.values()) % (10 ** 9 + 7)
 ```
