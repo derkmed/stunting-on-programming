@@ -10,6 +10,11 @@ Output: 3
 Explanation: We can make these trees: [2], [4], [4, 2, 2]  
 </b>
 
+Thought Process:
+* Notice that the solution for 6 is dependent on the solution for all of its factors. That is to say:
+  * ![equation](https://latex.codecogs.com/gif.latex?trees(v)=\Sigma_{x*y==v}trees(x)*trees(y)))))
+  * Notice that `x` and `y` can be flipped above
+* This boils down into an easy DP-problem if we work from bottom-up in ascending sorted order of values.
 ```
 class Solution:
     def numFactoredBinaryTrees(self, A: List[int]) -> int:
