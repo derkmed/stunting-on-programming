@@ -22,3 +22,35 @@ Grammar can best be understood through simple examples:
   * Given an expression representing a set of words under the given grammar, return the sorted list of words that the expression represents.
 
 </b>
+
+Thought Process:
+
+
+
+```
+class Solution(object):
+  def braceExpansionII(self, expr):
+    stack = []
+    for i,c in enumerate(expr):
+      
+      if c == '{' or c == ',':
+        stack.append(c)
+      elif c == '}':
+        while stack[-2] == ',':
+          assert(isinstance(stack[-1], set) and isinstance(stack[-3], set),
+                 "Incorrect expression provided.")
+          set_to = stack.pop()
+          stack.pop()
+          stack[-1] |= set_to
+        starting_bracket_replacement = stack.pop()
+        stack[-1] = starting_bracket_replacement
+      else:
+        stack.append(set(c))
+        
+      while len(stack) >= 2 and isinstance(stack[-1], set) and isinstance(stack[-2], set):
+        s2 = stack.pop()
+        s1 = stack.pop()
+        # notice the order in which we concatenate
+        stack.append(set(x+y for x in s1 for y in s2))
+    return list(sorted(stack[-1]))
+```
