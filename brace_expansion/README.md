@@ -24,8 +24,16 @@ Grammar can best be understood through simple examples:
 </b>
 
 Thought Process:
-
-
+* Think of it like a math expression
+  * `R(e_1+e_2` corresponds to mathematical multiplication
+  * `R(e_1,e_2)` corresponds to mathematical summation
+  * `R({...})` corresponds to mathematical parentheses
+* Key observations
+  * `,` will always occur in `{...}`. So, assuming that `e_1` and `e_2` are computed appropriately, it is easy to compute `e_1,e_2`
+  * `+` is the Cartesian product. Assuming that `e_1` and `e_2` are computed appropriately, it is easy to computer the cartesian product.
+  * If we see a `}`, we are conducting the highest-preceding operation. So, we need to be able to assume everything in the `{...}` gas been properly computed.
+* Improtant: We are generally relying on all the operands to be computed correctly! IF we handle the base case correctly, this should work.
+* This is very similar to the operator arithmetic with a Stack problem.
 
 ```
 class Solution(object):
