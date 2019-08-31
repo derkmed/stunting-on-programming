@@ -1,7 +1,7 @@
 # Set Matrix Zeroes
 
 <b>
-Question: Given a m x n matrix, if an element is 0, set its entire row and column to 0. Do it in-place.
+Question: Given a m x n matrix, if an element is 0, set its entire row and column to 0. Do it in-place.<br>
 
 Example:  
 Input:  
@@ -22,14 +22,14 @@ Output:
 Thought Process:
 * We need some way to indicate whether or not a row/column must be set to all zeroes. 
 However, we do not want to modify the matrix before we have processed all the necessary information.
-* What if we store this in the matrix[i][0] or matrix[0][j] values?
-  * We still need to keep some sort of flag/indicator of whether or not we need to zero-out the 0-th row/column, but we can do that in constant space (2)
-* We'll run through the matrix
+* What if we store this in the `matrix[i][0]` or `matrix[0][j]` values?
+  * We still need to keep some sort of flag/indicator of whether or not we need to zero-out the 0-th row/column, but we can do that in constant space (i.e. 2 flags)
+* We'll run through the matrix twice
   * Initially setting our flags of whether or not the 0-th row/columns need to be zeroed-out
-  * Initially checking all the non-matrix[i][0] and non-matrix[0][j] values to get the information we need
-    * We store this information in the corresponding matrix[i][0] and matrix[0][j] cells
-    * After iterating through all the non-matrix[i][0] and non-matrix[0][j] values, we can then apply the zeroing out process
-  * After handling all the elements, we can then 0-out the 0-th row/column if our flags indicate it necessary
+  * Initially checking all the non-`matrix[i][0]` and non-`matrix[0][j]` values to get the information we need
+    * We store this information in the corresponding `matrix[i][0]` and `matrix[0][j]` cells
+    * After iterating through all the non-`matrix[i][0]` and non-`matrix[0][j]` values, we can then apply the zeroing out process
+  * After handling all the elements, we can then zero-out the 0-th row/column if our flags deem it necessary
 
 ```
 class Solution:
