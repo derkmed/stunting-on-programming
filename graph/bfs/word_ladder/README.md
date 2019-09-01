@@ -1,11 +1,10 @@
 # Word Ladder 
 
-<b>
-  Question: Given two words (beginWord and endWord), and a dictionary's word list, find the length of shortest transformation sequence from beginWord to endWord, such that:
+<b>Question: Given two words (beginWord and endWord), and a dictionary's word list, find the length of shortest transformation sequence from beginWord to endWord, such that:</b>
 1. Only one letter can be changed at a time.
 2. Each transformed word must exist in the word list. Note that beginWord is not a transformed word.
 
-</b>
+
 
 Thought Process:
 * Run a BFS from the start word
