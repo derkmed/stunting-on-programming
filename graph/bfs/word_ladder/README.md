@@ -1,27 +1,5 @@
 # Word Ladder 
-<b>
-Given two words (beginWord and endWord), and a dictionary's word list, find the length of shortest transformation sequence from beginWord to endWord, such that:
-* Only one letter can be changed at a time.
-* Each transformed word must exist in the word list. Note that beginWord is not a transformed word.
-</b>
-<b>
-Note:<br>
-- Return 0 if there is no such transformation sequence.
-- All words have the same length.
-- All words contain only lowercase alphabetic characters.
-- You may assume no duplicates in the word list.
-- You may assume beginWord and endWord are non-empty and are not the same.
-</b>
-<br>
-<b>
-Input:<br>   
-beginWord = "hit",<br>  
-endWord = "cog",<br>   
-wordList = ["hot","dot","dog","lot","log","cog"]<br>   
-<br>
-Output: 5
-</b>
-<br>
+
 Thought Process:
 * Run a BFS from the start word
 * We know the possible word nodes outbound from any starting word will have words with only a single character (from a-z) replaced
