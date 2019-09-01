@@ -14,8 +14,8 @@ Thought Process:
 * If a root node is a valid BST, both its children must also be valid subtree-BST
   * There is a recursive nature
 * Somehow, we need to make sure that:
-  * <b>all</b> elements on the left of a root node have values smaller than the root node value
-  * <b>all</b> elements on the right of a root node have values larger than the root node value
+  * <b>All</b> elements on the left of a root node have values smaller than the root node value
+  * <b>All</b> elements on the right of a root node have values larger than the root node value
 * In order to guarantee this, we'll need to somehow pass the value-bounding information as we recurse
 
 ```
