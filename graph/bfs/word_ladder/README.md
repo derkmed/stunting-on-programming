@@ -49,5 +49,5 @@ class Solution:
     return 0
 ```
 
-T =  O(26*len(word)*n) where n is the size of the word_list 
+T =  O(26*len(word)*n) where n is the size of the word_list   
 S =  O(n)
