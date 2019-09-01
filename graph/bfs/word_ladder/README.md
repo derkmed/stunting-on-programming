@@ -6,11 +6,11 @@ Given two words (beginWord and endWord), and a dictionary's word list, find the 
 </b>
 <b>
 Note:<br>
-* Return 0 if there is no such transformation sequence.
-* All words have the same length.
-* All words contain only lowercase alphabetic characters.
-* You may assume no duplicates in the word list.
-* You may assume beginWord and endWord are non-empty and are not the same.
+- Return 0 if there is no such transformation sequence.
+- All words have the same length.
+- All words contain only lowercase alphabetic characters.
+- You may assume no duplicates in the word list.
+- You may assume beginWord and endWord are non-empty and are not the same.
 </b>
 <br>
 <b>
