@@ -12,10 +12,10 @@ Note:
 * You may assume no duplicates in the word list.
 * You may assume beginWord and endWord are non-empty and are not the same.
 <br>
-Input:   
-beginWord = "hit",  
-endWord = "cog",   
-wordList = ["hot","dot","dog","lot","log","cog"]   
+Input:<br>   
+beginWord = "hit",<br>  
+endWord = "cog",<br>   
+wordList = ["hot","dot","dog","lot","log","cog"]<br>   
 <br>
 Output: 5
 </b>
