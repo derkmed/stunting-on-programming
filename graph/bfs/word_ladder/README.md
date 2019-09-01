@@ -12,14 +12,14 @@ Note:
 * You may assume no duplicates in the word list.
 * You may assume beginWord and endWord are non-empty and are not the same.
 <br>
-Input:  
+Input:   
 beginWord = "hit",  
-endWord = "cog",  
-wordList = ["hot","dot","dog","lot","log","cog"]  
+endWord = "cog",   
+wordList = ["hot","dot","dog","lot","log","cog"]   
 <br>
 Output: 5
 </b>
-
+<br>
 Thought Process:
 * Run a BFS from the start word
 * We know the possible word nodes outbound from any starting word will have words with only a single character (from a-z) replaced
