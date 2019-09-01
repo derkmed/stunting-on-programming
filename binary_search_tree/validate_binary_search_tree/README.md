@@ -41,5 +41,5 @@ class Solution:
       return isValidBSTHelper(root)
 ``` 
 
-T = O(n)
+T = O(n)  
 S = O(n)
