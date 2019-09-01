@@ -9,8 +9,18 @@
 * <b>All words have the same length.</b>
 * <b>All words contain only lowercase alphabetic characters.</b>
 * <b>You may assume no duplicates in the word list.</b>
-  * <b>You may assume beginWord and endWord are non-empty and are not the same.</b>
+* <b>You may assume beginWord and endWord are non-empty and are not the same.</b>
 
+<b>
+Input:<br>
+beginWord = "hit",<br>
+endWord = "cog",<br>
+wordList = ["hot","dot","dog","lot","log","cog"]<br>
+<br>
+Output: 5<br>
+Explanation: As one shortest transformation is "hit" -> "hot" -> "dot" -> "dog" -> "cog",
+return its length 5.
+</b>
 
 Thought Process:
 * Run a BFS from the start word
