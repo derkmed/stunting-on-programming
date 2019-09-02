@@ -120,12 +120,12 @@ Thought Process:
   3. `i < k && j < k && i != j`
    * Why it is required to check (i < j && j < k) in case 3:
     * Suppose the input is {1,2,3} and target is 6. So we are going to have the following combination:
-     1.{1,2,3} {i=1,j=2,k=3}
-     2.{1,3,2} {i=1,j=3,k=2}
-     3.{2,1,3} {i=2,j=1,k=3}
-     4.{2,3,1} {i=2,j=3,k=1}
-     5.{3,1,2} {i=3,j=1,k=2}
-     6.{3,2,1} {i=3,j=2,k=1}
+     1. {1,2,3} {i=1,j=2,k=3}
+     2. {1,3,2} {i=1,j=3,k=2}
+     3. {2,1,3} {i=2,j=1,k=3}
+     4. {2,3,1} {i=2,j=3,k=1}
+     5. {3,1,2} {i=3,j=1,k=2}
+     6. {3,2,1} {i=3,j=2,k=1}
       the input must be one and only one of these combinations. Ttherefore, we just need to pick the relation which occurs exactly only once as the condition. 
        * You can use 1.(i<j && j<k) because the relation occurs only one.
        * You can use 6.(i>j && j>k) which also occurs once.
