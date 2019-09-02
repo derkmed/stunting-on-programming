@@ -108,7 +108,13 @@ S=O(1)
 
 # 3Sum Multi
 
-<b>Question: Given an integer array A, and an integer target, return the number of tuples i, j, k  such that i < j < k and A[i] + A[j] + A[k] == target. As the answer can be very large, return it modulo 10^9 + 7.</b>
+<b>Question: Given an integer array A, and an integer target, return the number of tuples i, j, k  such that i < j < k and A[i] + A[j] + A[k] == target. As the answer can be very large, return it modulo 10^9 + 7.
+
+Note:   
+1. 3 <= A.length <= 3000   
+2. 0 <= A[i] <= 100   
+3. 0 <= target <= 300   
+</b>
 
 Thought Process:
 * The whole `i < j < k` just throws you off. It's confusing. They essentially just want the tuples.
@@ -118,18 +124,19 @@ Thought Process:
   1. `i == j == k`
   2. `i == j != k`
   3. `i < k && j < k && i != j`
-   * Why it is required to check (i < j && j < k) in case 3:
-    * Suppose the input is {1,2,3} and target is 6. So we are going to have the following combination:
-     1. {1,2,3} {i=1,j=2,k=3}
-     2. {1,3,2} {i=1,j=3,k=2}
-     3. {2,1,3} {i=2,j=1,k=3}
-     4. {2,3,1} {i=2,j=3,k=1}
-     5. {3,1,2} {i=3,j=1,k=2}
-     6. {3,2,1} {i=3,j=2,k=1}
-      the input must be one and only one of these combinations. Ttherefore, we just need to pick the relation which occurs exactly only once as the condition. 
-       * You can use 1.(i<j && j<k) because the relation occurs only one.
-       * You can use 6.(i>j && j>k) which also occurs once.
-       * But you cannot use 3.5.(i>j && j<k) because this relation occurs twice, nor can you use 2.4.(i<j && j>k) because it occurs twice too.
+* Why it is required to check (i < j && j < k) in case 3:
+  * Suppose the input is {1,2,3} and target is 6. So we are going to have the following combination:
+   1. {1,2,3} {i=1,j=2,k=3}
+   2. {1,3,2} {i=1,j=3,k=2}
+   3. {2,1,3} {i=2,j=1,k=3}
+   4. {2,3,1} {i=2,j=3,k=1}
+   5. {3,1,2} {i=3,j=1,k=2}
+   6. {3,2,1} {i=3,j=2,k=1}
+    the input must be one and only one of these combinations. Ttherefore, we just need to pick the relation which occurs exactly only once as the condition. 
+
+  * You can use 1.(i<j && j<k) because the relation occurs only one.
+  * You can use 6.(i>j && j>k) which also occurs once.
+  * But you cannot use 3.5.(i>j && j<k) because this relation occurs twice, nor can you use 2.4.(i<j && j>k) because it occurs twice too.
 
 ```
 class Solution:
