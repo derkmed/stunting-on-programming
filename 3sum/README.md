@@ -105,3 +105,38 @@ class Solution:
 ```
 T=O(n<sup>2</sup>)<br>
 S=O(1)
+
+# Three Sum Multi
+
+<b>Question: Given an integer array A, and an integer target, return the number of tuples i, j, k  such that i < j < k and A[i] + A[j] + A[k] == target. As the answer can be very large, return it modulo 10^9 + 7.</b>
+
+Thought Process:
+* The whole `i < j < k` just throws you off. It's confusing. They essentially just want the tuples.
+* Similar to 3Sum, however now we must take into account there can be duplicate elements
+* This will require combinatorics
+* Let's redefine `i`, `j`, and `k` as the actual elements of the integer array. There are 3 cases among the possible combinations:
+  1. `i == j == k`
+  2. `i == j != k`
+  3. `i < k && j < k && i != j`
+
+```
+class Solution:
+  def threeSumMulti(self, nums: List[int], target: int) -> int:
+    nums_counts = collections.Counter(nums)
+    res = 0
+    for i, j in itertools.combinations_with_replacement(nums_counts, 2):
+      k = target - i - j
+      if i == j == k: 
+        # nchoosek(nums_counts[i], 3)
+        res += nums_counts[i] * (nums_counts[i] - 1) * (nums_counts[i] - 2) / 6
+      elif i == j != k: 
+        # nchoosek(nums_counts[i], 2) * nums_counts[k]
+        res += nums_counts[i] * (nums_counts[i] - 1) / 2 * nums_counts[k]
+      elif k > i and k > j:
+        # implied that i != j
+        res += nums_counts[i] * nums_counts[j] * nums_counts[k]
+    return int(res % (10**9 + 7))
+```
+
+T = O(N<sup>2</sup>)  
+S = O(N)
