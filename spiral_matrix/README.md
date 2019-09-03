@@ -19,12 +19,14 @@ Thought Process:
   * empty?
   * single-column?
   * single-row?
-* Observe how we pass through each side and the bounds will need to change
+  * odd # "layers"?
+  * even # "layers"?
+* Observe how we pass through each side and the bounds will need to change. We'll define a single layer as consisting of the following 4 edges:
   * Top edge
   * Right edge
   * Bottom edge
   * Left edge
-* There are multiple ways to do this, but hopefully you can the nature of these layers and how we can loop through them.
+* There are multiple ways to solve this problem, but hopefully you can observe the nature of these layers and how we can loop through them.
 * Let's keep <i>inclusive</i> index pointers (left, right, bottom, top).
   * We'll allow the top and bottom edges to include the corners
   * We'll disallow the left and right edges from including corners
@@ -54,5 +56,5 @@ class Solution:
 
       return result
 ```
-T = O(n)
+T = O(n)   
 S = O(n)
