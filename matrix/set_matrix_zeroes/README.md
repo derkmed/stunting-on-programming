@@ -31,7 +31,7 @@ However, we do not want to modify the matrix before we have processed all the ne
     * After iterating through all the non-`matrix[i][0]` and non-`matrix[0][j]` values, we can then apply the zeroing out process
   * After handling all the elements, we can then zero-out the 0-th row/column if our flags deem it necessary
 
-```
+```python
 class Solution:
     def setZeroes(self, matrix: List[List[int]]) -> None:
       """
