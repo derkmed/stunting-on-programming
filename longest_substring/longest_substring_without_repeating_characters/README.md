@@ -11,7 +11,7 @@ Thought Process:
 * Keep a window with `left`+`right` pointers and a dictionary lookup table from seen characters and their corresponding indices
 * Whenever we come across a character we've already seen, `left` can jump to the location of that character's mapped index + 1 (the next index)
 
-```
+```python
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
       seen = {}
@@ -24,5 +24,5 @@ class Solution:
       return max_length
 ```
 
-T = O(n)
+T = O(n)  
 S = O(n)
