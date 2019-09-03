@@ -9,7 +9,7 @@ Thought Process
     * From rows 1,2,...n: `current_row = [x + y, for x, y in zip(prev_row + [0], [0] + prev_row)]`.
 
 So, let's initialize our triangle with the first row (`num_rows=1`) and append each new row iterating from `[1, num_rows)`. At the very end, we'll handle the `num_rows = 0` case via slicing with `triangle[:num_rows]`.
-```
+```python
 class Solution:
     def generate(self, num_rows: int) -> List[List[int]]:
       triangle = [[1]]
@@ -25,7 +25,7 @@ class Solution:
 
 Thought Process
 * Similar to the above. However, now we only need to keep one row at a time: This time though, it is easier because we know that "0" refers to the first row!
-```
+```python
 class Solution:
     def getRow(self, row_index: int) -> List[int]:
       row = [1]
