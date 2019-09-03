@@ -33,7 +33,7 @@ Thought Process:
   * This isn't necessary, but the code becomes a tad bit more concise.
   * We just need to make sure that we remember the pointers are inclusive and we break early in the singular row/column cases!
   
-```
+```python
 class Solution:
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
       
