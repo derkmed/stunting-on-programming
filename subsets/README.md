@@ -22,7 +22,7 @@ Thought Process:
 * You add an element or you do not
 * Iterate through each element and update based on past information!
 
-```
+```python
 class Solution:
   def subsets(self, nums: List[int]) -> List[List[int]]:
     subsets = [[]]
