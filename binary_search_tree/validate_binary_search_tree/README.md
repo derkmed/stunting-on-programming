@@ -18,7 +18,7 @@ Thought Process:
   * <b>All</b> elements on the right of a root node have values larger than the root node value
 * In order to guarantee this, we'll need to somehow pass the value-bounding information as we recurse
 
-```
+```python
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, x):
