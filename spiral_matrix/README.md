@@ -28,10 +28,11 @@ Thought Process:
   * Left edge
 * There are multiple ways to solve this problem, but hopefully you can observe the nature of these layers and how we can loop through them.
 * Let's keep <i>inclusive</i> index pointers (left, right, bottom, top).
-  * We'll allow the top and bottom edges to include the corners
-  * We'll disallow the left and right edges from including corners
-  * This isn't necessary, but the code becomes a tad bit more concise
-  * We just need to make sure that we remember the pointers are inclusive and we break early in the singular row/column cases
+  * We'll allow the top and bottom edges to include the corners.
+  * We'll disallow the left and right edges from including corners.
+  * This isn't necessary, but the code becomes a tad bit more concise.
+  * We just need to make sure that we remember the pointers are inclusive and we break early in the singular row/column cases!
+  
 ```
 class Solution:
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
