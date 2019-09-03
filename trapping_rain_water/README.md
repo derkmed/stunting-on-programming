@@ -19,7 +19,7 @@ Thought Process:
   1. The first 3 modify `left` because `left_max < right_max`
   2. The latter 3 modify `right` because `right_max > left_max`
   * Using this comparison, we can make left and right one step closer. Thus we can finish it in linear time.
- ```
+ ```python
 class Solution:
     def trap(self, heights: List[int]) -> int: 
       n = len(heights)
