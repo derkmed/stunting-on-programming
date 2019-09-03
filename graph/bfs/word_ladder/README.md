@@ -29,7 +29,7 @@ Thought Process:
 * Because we are doing BFS, we can keep track of what words we have seen and disregard anything we come across again
 * If the `end_word` is not in the `word_list` or we have no more outbound word node options, we can return 0
 
-```
+```python
 class Solution:
   def ladderLength(self, begin_word: str, end_word: str, word_list: List[str]) -> int:
 
