@@ -15,7 +15,7 @@ Thought Process:
      * If our newest prefix sum has value W, and `W-V == K`, then we add `count[V]` to our answer.
      * This means that at time `t`, `A[0] + A[1] + ... + A[t-1] = W`, and there are `count[V]` indices `j` with `j < t-1` and `A[0] + A[1] + ... + A[j] = V`. Thus, there are `count[V]` subarrays `A[j+1] + A[j+2] + ... + A[t-1] = K`.
   
-```
+```python
 class Solution:
   def subarraySum(self, nums: List[int], k: int) -> int:
     counts = collections.Counter()
