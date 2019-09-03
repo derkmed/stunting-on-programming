@@ -11,7 +11,7 @@ Thought Process:
 * We need to consider possible edge cases
   * There may be duplicate elements, and we do not want to return duplicate triplets.
 
-```
+```python
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
       triplets = []
@@ -50,7 +50,7 @@ Thought Process:
 * Similar to regular 3Sum, but now we want the value closest to `target` as opposed to `0`
 * Start with the initial default solution (`nums[0] + nums[1] + nums[2]`) as a placeholder and then run the regular 3Sum logic from there.
 
-```
+```python
 class Solution:
     def threeSumClosest(self, nums: List[int], target: int) -> int:
         nums, n = sorted(nums), len(nums)
@@ -89,7 +89,7 @@ Thought Process:
 * This is very similar to 3Sum. 
   * How about, we sort in descending order. This way, if we move from left-to-right, we know  the maximum size `c` that `a + b` must be greater than.
   
-```
+```python
 class Solution:
   def triangleNumber(self, nums: List[int]) -> int:
     nums, count_result, n = sorted(nums, reverse=True), 0, len(nums)
@@ -138,7 +138,7 @@ Thought Process:
   * You can use 6.(i>j && j>k) which also occurs once.
   * But you cannot use 3.5.(i>j && j<k) because this relation occurs twice, nor can you use 2.4.(i<j && j>k) because it occurs twice too.
 
-```
+```python
 class Solution:
   def threeSumMulti(self, nums: List[int], target: int) -> int:
     nums_counts = collections.Counter(nums)
@@ -162,7 +162,7 @@ S = O(N)
 
 
 <b>Other solution:</b>
-```
+```python
 class Solution(object):
   def threeSumMulti(self, A, target):
     MOD = 10**9 + 7
