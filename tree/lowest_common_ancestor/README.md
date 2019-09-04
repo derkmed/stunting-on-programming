@@ -32,27 +32,26 @@ Thought Process:
 #         self.right = None
 
 class Solution:
-    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
-        
-        def lowestCommonAncestorHelper(root:'TreeNode', p: 'TreeNode', q: 'TreeNode'): 
-            
-            # Base Cases
-            if root is None:
-                return None
-            elif root == p or root == q:
-                return root
-            
-            # Left + Right Subtrees
-            left_candidate = lowestCommonAncestorHelper(root.left, p, q)
-            right_candidate = lowestCommonAncestorHelper(root.right, p, q)
-            if not left_candidate and not right_candidate:
-                return None 
-            elif left_candidate and right_candidate:
-                return root
-            
-            return left_candidate or right_candidate
-        
-        return lowestCommonAncestorHelper(root, p, q)
+  def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+
+    def lowestCommonAncestorHelper(root:'TreeNode', p: 'TreeNode', q: 'TreeNode') -> bool: 
+      # Base Cases
+      if root is None:
+        return None
+      elif root == p or root == q:
+        return root
+
+      # Left + Right Subtrees
+      left_candidate = lowestCommonAncestorHelper(root.left, p, q)
+      right_candidate = lowestCommonAncestorHelper(root.right, p, q)
+      if not left_candidate and not right_candidate:
+        return None 
+      elif left_candidate and right_candidate:
+        return root
+
+      return left_candidate or right_candidate
+
+    return lowestCommonAncestorHelper(root, p, q)
 ```
 
 T = O(n)   
