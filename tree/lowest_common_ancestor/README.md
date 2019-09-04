@@ -16,7 +16,7 @@ Thought Process:
   * Recursive element to the solution
 * How about we have a recursive helper that will return a node that helps find the LCA or `None`?
 * Cases:
-  * Is a node None?
+  * Is a node `None`?
   * Is a node p?
   * Is a node q?
   * Is a node the LCA?
