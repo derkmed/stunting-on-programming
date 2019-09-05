@@ -6,9 +6,9 @@ The word can be constructed from letters of sequentially adjacent cell, where "a
 Example:    
 board =  
 [  
-&nbsp&nbsp['A','B','C','E'],  
-&nbsp&nbsp['S','F','C','S'],  
-&nbsp&nbsp['A','D','E','E']  
+&nbsp;&nbsp;['A','B','C','E'],  
+&nbsp;&nbsp;['S','F','C','S'],  
+&nbsp;&nbsp;['A','D','E','E']  
 ]  
   
 Given word = "ABCCED", return true.  
