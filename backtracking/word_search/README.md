@@ -22,35 +22,35 @@ Thought Process:
 
 ```python
 class Solution:
-    def exist(self, board: List[List[str]], word: str) -> bool:
-     
-      def dfs(board: List[List[str]], i : int, j: int, word: str) -> bool:
-        if not word:
-          return True
-        elif i < 0 or j < 0 or i >= len(board) or j >= len(board[0]): 
-          return False
-        elif board[i][j] == word[0]:
-          tmp = board[i][j]
-          board[i][j] = '#'
-          result = dfs(board, i-1, j, word[1:]) or dfs(board, i+1, j, word[1:]) or \
-              dfs(board, i, j-1, word[1:]) or dfs(board, i, j+1, word[1:])
-          board[i][j] = tmp 
-          return result 
-        else:
-          return False
-  
-    
-      m = len(board)
-      if m == 0:
-        return False
-      n = len(board[0])
-      for j in range(n):
-        for i in range(m):
-          coord = (i, j)
-          if dfs(board, i, j, word):
-            return True
+  def exist(self, board: List[List[str]], word: str) -> bool:
 
-      return False        
+    def dfs(board: List[List[str]], i : int, j: int, word: str) -> bool:
+      if not word:
+        return True
+      elif i < 0 or j < 0 or i >= len(board) or j >= len(board[0]): 
+        return False
+      elif board[i][j] == word[0]:
+        tmp = board[i][j]
+        board[i][j] = '#'
+        result = dfs(board, i-1, j, word[1:]) or dfs(board, i+1, j, word[1:]) or \
+            dfs(board, i, j-1, word[1:]) or dfs(board, i, j+1, word[1:])
+        board[i][j] = tmp 
+        return result 
+      else:
+        return False
+
+
+    m = len(board)
+    if m == 0:
+      return False
+    n = len(board[0])
+    for j in range(n):
+      for i in range(m):
+        coord = (i, j)
+        if dfs(board, i, j, word):
+          return True
+
+    return False        
 ```
 
 T = O(mn) where m is the length of the word and n is the size of the board
