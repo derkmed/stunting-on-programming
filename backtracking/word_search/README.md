@@ -1,7 +1,5 @@
 # Word Search I
-<b>Question: Given a 2D board and a word, find if the word exists in the grid.
-
-The word can be constructed from letters of sequentially adjacent cell, where "adjacent" cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once.
+<b>Question: You are given a 2D board and a word, find if the word exists in the grid. The word can be constructed from letters of sequentially adjacent cell, where "adjacent" cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once.
 
 Example:    
 board =  
@@ -19,7 +17,7 @@ Given word = "ABCB", return false.
 
 
 Thought Process:
-* This is an iconic example of backtracking. We can run DFS for each coordinate and recurse among all neighbors.
+* This is a pretty typical example of backtracking. We can run DFS for each coordinate and recurse among all neighbors.
 * To prevent revisitng a coordinate, we can override its value temporarily. Just remember to revert it back (in case we backtrack)!
 
 ```python
