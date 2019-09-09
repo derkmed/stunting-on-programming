@@ -18,6 +18,9 @@ class Solution:
         return l2
 ```
 
+T = O(n)  
+S = O(n) for stack frames
+
 # Merge K Sorted Lists
 
 ```python
@@ -52,5 +55,7 @@ class Solution:
           q.put(WrappedListNode(node))
       
       return head.next
-
 ```
+
+T = O(nklogk)  
+S = O(n) for stack frames
