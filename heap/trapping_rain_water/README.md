@@ -56,10 +56,11 @@ Return 4.
 </b>  
 
 Thought Process:
-* We know that each element is bounded by the min of the maximum bounding element in its row or column.
-* Maybe by starting from the "lowest border to whatever hole/puddle" a cell is in, we can find work our way to a cell to determine how much water it can hold. 
-* Perhaps we can use a priority queue? This way we can always ensure that we visit the "lowest border" first
-
+* Similar to <b>Trapping Rain water 1</b>, but now we have more than two pointers. The boundary of the container starts at the four edges of the matrix (rectangular boundary)
+* How do we find the minimum of the boundary? This is no longer as straightforward as in the 1D case due to the rectangular boundary.
+  * Fortunately we have a data structure called "PriorityQueue" which can help find the minimum in log(queue_size) time.
+* How do we replace the boundaries and how do we avoid repetition? Each cell can have at most four neighbors.
+  * Let's keep a `visited` data structure.
 
 ```python
 import heapq
@@ -92,5 +93,5 @@ class Solution:
     return result
 ```
 
-T = O(nlogn)  where n refers to the number of cells. The log(n) is from the priority queue
-S = O(n)    
+T = O(mnlogmn)  where (m, n) are (row, columns). The log(mn) is for pushing elements onto the priority queue.  
+S = O(mn)    
