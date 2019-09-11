@@ -40,4 +40,57 @@ class Solution:
  ```  
  T = O(n)
  S = O(1)
+ 
 # Trapping Rain Water 2
+
+<b>Question: Given an m x n matrix of positive integers representing the height of each unit cell in a 2D elevation map, compute the volume of water it is able to trap after raining.  
+
+Given the following 3x6 height map:  
+\[  
+  \[1,4,3,1,3,2\],  
+  \[3,2,1,3,2,4\],  
+  \[2,3,3,2,3,1\]  
+\]  
+  
+Return 4.
+</b>  
+
+Thought Process:
+* We know that each element is bounded by the min of the maximum bounding element in its row or column.
+* Maybe by starting from the "lowest border to whatever hole/puddle" a cell is in, we can find work our way to a cell to determine how much water it can hold. 
+* Perhaps we can use a priority queue? This way we can always ensure that we visit the "lowest border" first
+
+
+```python
+import heapq
+from typing import Tuple
+
+class Solution:
+  def trapRainWater(self, height_map: List[List[int]]) -> int:
+
+    if height_map is None or len(height_map) < 1: return 0
+
+    priority_queue = []
+    m, n = len(height_map), len(height_map[0])
+    visited = [[False] * n for _ in range(m)]
+
+    for i in range(m):
+      for j in range(n):
+        if i == 0 or i == m-1 or j == 0 or j == n-1:
+          heapq.heappush(priority_queue, (height_map[i][j], i, j))
+          visited[i][j] = True
+
+    result = 0
+    while priority_queue:
+      h, i, j = heapq.heappop(priority_queue)
+      for ni, nj in [(i+1, j), (i-1, j), (i, j+1), (i, j-1)]:
+        if ni >= 0 and ni < m and nj >= 0 and nj < n and not visited[ni][nj]:
+          result += max(0, h - height_map[ni][nj])
+          heapq.heappush(priority_queue, (max(h, height_map[ni][nj]), ni, nj))
+          visited[ni][nj] = True
+
+    return result
+```
+
+T = O(nlogn)  where n refers to the number of cells. The log(n) is from the priority queue
+S = O(n)    
