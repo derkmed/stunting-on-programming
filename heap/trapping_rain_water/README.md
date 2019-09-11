@@ -38,8 +38,8 @@ class Solution:
           r -= 1
       return result 
  ```  
- T = O(n)
- S = O(1)
+ T = O(n)   
+ S = O(1)   
  
 # Trapping Rain Water 2
 
