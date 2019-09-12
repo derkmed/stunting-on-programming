@@ -10,12 +10,11 @@
   * If there are no values, it returns the empty string ("").
 
 Note:
-
-All key/value strings are lowercase.
-All key/value strings have length in the range [1, 100]
-The timestamps for all TimeMap.set operations are strictly increasing.
-1 <= timestamp <= 10^7
-TimeMap.set and TimeMap.get functions will be called a total of 120000 times (combined) per test case.
+* All key/value strings are lowercase.
+* All key/value strings have length in the range [1, 100]
+* The timestamps for all TimeMap.set operations are strictly increasing.
+* 1 <= timestamp <= 10^7
+* TimeMap.set and TimeMap.get functions will be called a total of 120000 times (combined) per test case.
 
 </b>
 
