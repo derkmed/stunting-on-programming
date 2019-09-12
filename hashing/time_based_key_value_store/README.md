@@ -8,7 +8,20 @@
   * Returns a value such that set(key, value, timestamp_prev) was called previously, with timestamp_prev <= timestamp.
   * If there are multiple such values, it returns the one with the largest timestamp_prev.
   * If there are no values, it returns the empty string ("").
+
+Note:
+
+All key/value strings are lowercase.
+All key/value strings have length in the range [1, 100]
+The timestamps for all TimeMap.set operations are strictly increasing.
+1 <= timestamp <= 10^7
+TimeMap.set and TimeMap.get functions will be called a total of 120000 times (combined) per test case.
+
 </b>
+
+Thought Process:
+* We definitely need some sort of mapping data structure. How about a hash map?
+* Now for each key, we can run binary search on the guaranteed sorted lists of timestamps to find the relevant value for that key
 
 ```python
 
@@ -33,3 +46,7 @@ class TimeMap:
         return timestamps_values[i-1][1] if i else ""
 
 ```
+
+T = O(1) for set  
+T = O(logn) for get  
+S = O(N)  
