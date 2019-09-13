@@ -23,5 +23,5 @@ class Solution:
     return shortest
 ```
 
-T = O(S) but Theta(minLen * n)  
+T = O(S) but &theta;(minLen * n)  
 S = O(1)
