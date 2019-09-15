@@ -57,8 +57,6 @@ solution is 4!
 ```python
 class Solution:
   def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
-    
-    
     '''
     i + j = m - i + n - j (+1); i =0 ~ m and j = (m + n + 1) / 2 - i
     NOTE: we need to bound n >= m because of our j equation.
