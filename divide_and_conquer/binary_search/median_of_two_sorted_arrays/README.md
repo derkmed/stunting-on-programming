@@ -9,8 +9,40 @@ Thought Proces:
     A[0], A[1], ..., A[i-1]  |  A[i], A[i+1], ..., A[m-1]
     B[0], B[1], ..., B[j-1]  |  B[j], B[j+1], ..., B[n-1]
     ```
-  *`i = 0 ~ m` and `j = (m + n) / 2 - i`
-  * We want to ensure that both the `left_part` and `right_part` are equal in length and that the `max(left_part) <= min(right_part)`
+  * `i = 0 ~ m` and `j = (m + n + 1) / 2 - i` because the are `m + n + 1` places a cut can be placed (think about this:if A and B should be arranged contiguously, between them is a space!)
+  * We want to ensure that both the `left_part` and `right_part` are equal in length and that the `max(left_part) <= min(right_part)`. Thus, `B[j-1] <= A[i]` and `A[i-1] <= B[j]`
+  * Based on this definition, we need to make sure that n is the longer length to ensure that `j >= 0`
+* Depending on the length of the array, the goal we are trying to go for is to be able to calculate the median such that `median = (max(left_part) + min(right_part))/2`.
+* We need proper bounds checking!
+
+Working example:
+``` 
+A = [1, 5, 7, 9]   
+B = [2, 4, 6]
+```
+
+``` 
+A = [2, 4, 6]
+B = [1, 5, 7, 9]   
+```
+
+``` 
+A:  2  4  |  6
+B:  1  5  |  7  9
+
+i = 1
+j = 3 = (3 + 4 + 1) / 2 - 1
+```
+
+``` 
+A:  2  4  |  6
+B:  1  5  |  7  9
+
+i = 1
+j = 3 = (3 + 4 + 1) / 2 - 1
+```
+
+
 
 ```python
 class Solution:
