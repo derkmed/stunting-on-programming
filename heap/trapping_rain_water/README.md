@@ -41,6 +41,9 @@ class Solution:
  T = O(n)   
  S = O(1)   
  
+ 
+Topics: {Two-pointer, Array}
+ 
 # Trapping Rain Water 2
 
 <b>Question: Given an m x n matrix of positive integers representing the height of each unit cell in a 2D elevation map, compute the volume of water it is able to trap after raining.  
@@ -95,3 +98,8 @@ class Solution:
 
 T = O(mnlogmn)  where (m, n) are (row, columns). The log(mn) is for pushing elements onto the priority queue.  
 S = O(mn)    
+
+
+Topics: {Heap}
+
+ 
