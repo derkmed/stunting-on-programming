@@ -3,13 +3,14 @@
 <b>Question: There are two sorted arrays nums1 and nums2 of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)). You may assume nums1 and nums2 cannot be both empty.</b>
 
 Thought Proces:
-* We build a formula for two pointers `i` and `j`that divide the array in half as follows:  
+* We define two pointers `i` and `j`that divide the array in half as follows:  
   * ```
           left_part          |        right_part
     A[0], A[1], ..., A[i-1]  |  A[i], A[i+1], ..., A[m-1]
     B[0], B[1], ..., B[j-1]  |  B[j], B[j+1], ..., B[n-1]
     ```
-*
+  *`i = 0 ~ m` and `j = (m + n) / 2 - i`
+  * We want to ensure that both the `left_part` and `right_part` are equal in length and that the `max(left_part) <= min(right_part)`
 
 ```python
 class Solution:
