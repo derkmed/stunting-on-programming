@@ -1,7 +1,21 @@
 # Sort a 2D array
 
 <b>
-Question: Given a 2D array where all the rows are sorted, write a program to sort the array. Can you do this in-place? 
+Question: Given a 2D array where all the rows are sorted, write a program to sort the array. Can you do this in-place?   
+    
+Example:    
+Input:  
+[[ 5, 12, 17, 21, 23],  
+ [ 1,  2,  4,  6,  8],  
+ [12, 14, 18, 19, 27],  
+ [ 3,  7,  9, 15, 25]]  
+
+Output:  
+[[ 1,  2,  3,  4,  5],  
+ [ 6,  7,  8,  9, 12],  
+ [12, 14, 15, 17, 18],  
+ [19, 21, 23, 25, 27]]  
+    
 </b>
 
 
