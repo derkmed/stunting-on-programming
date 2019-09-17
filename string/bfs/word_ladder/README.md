@@ -53,18 +53,16 @@ T =  O(26*len(word)*n) where n is the size of the word_list
 S =  O(n)
 
 # Word Ladder 2
-<b>
-Question: Given two words (beginWord and endWord), and a dictionary's word list, find all shortest transformation sequence(s) from beginWord to endWord, such that:
-1. Only one letter can be changed at a time  
-2. Each transformed word must exist in the word list. Note that beginWord is not a transformed word.  
-</b>
-<b>
-Note:  
-* Return an empty list if there is no such transformation sequence.
-* All words have the same length.
-* All words contain only lowercase alphabetic characters.
-* You may assume no duplicates in the word list.
-* You may assume beginWord and endWord are non-empty and are not the same.
+<b>Question: Given two words (beginWord and endWord), and a dictionary's word list, find all shortest transformation sequence(s) from beginWord to endWord, such that:</b>  
+1. <b>Only one letter can be changed at a time  </b>
+2. <b>Each transformed word must exist in the word list. Note that beginWord is not a transformed word.</b>
+
+<b>Note:</b>  
+* <b>Return an empty list if there is no such transformation sequence.</b>
+* <b>All words have the same length.</b>
+* <b>All words contain only lowercase alphabetic characters.</b>
+* <b>You may assume no duplicates in the word list.</b>
+* <b>You may assume beginWord and endWord are non-empty and are not the same.</b>
 </b>
 
 ```python
