@@ -100,4 +100,4 @@ class Solution:
 ```
 
 T =  O(26*len(word)*n) where n is the size of the word_list   
-S =  O(n<super>2</super>)
+S =  O(n<sup>2</sup>)
