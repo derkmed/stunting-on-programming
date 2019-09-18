@@ -32,5 +32,5 @@ class Solution:
     return False            
 ```
 
-T = O(n<sup>2</sup>)
+T = O(n<sup>2</sup>)   
 S = O(n) (Can be O(1) if we have a helper function to compare for B[i:]+B[i:] as opposed to building a new String
