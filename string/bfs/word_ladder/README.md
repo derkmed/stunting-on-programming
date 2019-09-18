@@ -65,6 +65,13 @@ S =  O(n)
 * <b>You may assume beginWord and endWord are non-empty and are not the same.</b>
 </b>
 
+Thought Process:
+* Given that we want the shortest transformation sequence(s), perhaps BFS?
+* At each degree/timestep from the starting word, we definitely need to keep track of the sequence we took to get to the current position:
+  * let's represent each word at layer `t` with a dictionary mapping from the word at the layer to a list of paths taken to get to this position.
+  * for layer `t+1`, assuming we have not reached the end yet, we can generate a new dictionary for that layer and dispose of the previous layer.
+* We can either keep a visited set <i>or</i> create a word set and remove elements as we visit them because we never want to consider a word seen at layer `u: u > t` if it was already seen at layer `t`
+
 ```python
 from collections import deque
 class Solution:
@@ -91,3 +98,6 @@ class Solution:
     return solution
 
 ```
+
+T =  O(26*len(word)*n) where n is the size of the word_list   
+S =  O(n<super>2</super>)
