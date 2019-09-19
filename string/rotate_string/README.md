@@ -34,3 +34,42 @@ class Solution:
 
 T = O(n<sup>2</sup>)   
 S = O(n) (Can be O(1) if we have a helper function to compare for B[i:]+B[i:] as opposed to building a new String)
+
+
+<b>A more advanced implementation:</b>
+
+Thought Process:
+* This approach employs a KMP-like approach.
+* We first generate a `shifts` array. Every element `i` of `shifts` indicates how much `i` must be shifted over such that we find the ending index of the longest prefix that is also a suffix.
+  * For instance, in sub/string "aabaa", we can see that `shifts[4] = 3` because the longest prefix-suffix is `aa`.
+* Using this `shifts` array, we can then run linear substring matching of `B` in `A+A` because we know that `A+A` must contain `B` if `B` is a valid rotation of `A`.
+
+```python
+class Solution:
+  def rotateString(self, A: str, B: str) -> bool:
+    def generate_shift_table(s: str) -> List[str]:
+      shifts = [1] * (len(s) + 1)
+      l = -1
+      for r in range(len(s)):
+        while l >= 0 and s[l] != s[r]:
+          l -= shifts[l]
+        shifts[r+1] = r - l 
+        l += 1
+      return shifts        
+      
+    if len(A) != len(B): return False
+    if not A and not B: return True
+    
+    shifts = generate_shift_table(B)
+    match_len = 0
+    for char in A+A:
+      while match_len >= 0 and B[match_len] != char:
+        match_len -= shifts[match_len]
+      match_len += 1
+      if match_len == len(B):
+        return True
+    return False
+```
+
+T = O(n)  
+S = O(n)  
