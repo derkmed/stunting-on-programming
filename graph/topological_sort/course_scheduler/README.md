@@ -5,7 +5,8 @@ Question: There are a total of n courses you have to take, labeled from 0 to n-1
 Given the total number of courses and a list of prerequisite pairs, return the ordering of courses you should take to finish all courses.
 There may be multiple correct orders, you just need to return one of them. If it is impossible to finish all courses, return an empty array.
 </b>
-
+  
+    
 <b>Example:  
 Input: 2, [[1,0]]   
 Output: [0,1]  
