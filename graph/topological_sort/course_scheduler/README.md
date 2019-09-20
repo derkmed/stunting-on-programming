@@ -24,20 +24,16 @@ from collections import defaultdict
 class Solution:
   def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
     
-    # indegree counter
+    # prereqs counter (indegree)
     prereq_counts = [0] * numCourses 
-    # adj mapping to dependent courses
-    prereq_for = defaultdict(set)
-    q, solution = [], []
+    # adj mapping to dependent courses (outbound nodes)
+    prereq_for = defaultdict(set)    
     
     for course, prereq in prerequisites:
       prereq_counts[course] += 1
-      prereq_for[prereq].add(course)
-    
-    for prereq_i, count in enumerate(prereq_counts):
-      if  count == 0:
-        q.append(prereq_i)
-
+      prereq_for[prereq].add(course)    
+        
+    q, solution = [c for c in range(len(prereq_counts)) if prereq_counts[c] == 0], []
     while q:
       course = q.pop()
       for dependent_course in prereq_for[course]:
@@ -49,5 +45,4 @@ class Solution:
       solution.append(course)
       
     return solution if len(solution) == numCourses else []
-       
 ```
