@@ -48,5 +48,5 @@ Thought Process:
     return solutions
 ```
 
-T = O(n^3)  
-S = O(n^4) the number of solutions
+T = O(n<sup>3</sup>)  
+S = O(n<sup>4</sup>) the number of solutions
