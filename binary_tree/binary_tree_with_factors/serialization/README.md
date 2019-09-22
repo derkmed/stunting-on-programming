@@ -1,7 +1,8 @@
 # Serialize and Deserialize Binary Tree
 
-<b>Question: Serialization is the process of converting a data structure or object into a sequence of bits so that it can be stored in a file or memory buffer, or transmitted across a network connection link to be reconstructed later in the same or another computer environment.  
-Design an algorithm to serialize and deserialize a binary tree. There is no restriction on how your serialization/deserialization algorithm should work. You just need to ensure that a binary tree can be serialized to a string and this string can be deserialized to the original tree structure.</b>
+<b>Question: Serialization is the process of converting a data structure or object into a sequence of bits so that it can be stored in a file or memory buffer, or transmitted across a network connection link to be reconstructed later in the same or another computer environment.</b>  
+  
+<b>Design an algorithm to serialize and deserialize a binary tree. There is no restriction on how your serialization/deserialization algorithm should work. You just need to ensure that a binary tree can be serialized to a string and this string can be deserialized to the original tree structure.</b>
 
 ```
 Example:  
@@ -18,12 +19,14 @@ as "[1,2,3,null,null,4,5]"
 
 Thought Process:
 * Let's use pre-order traversal.
-* Empty/Null nodes can be indicated by a particular value (e.g. `#` or `X`)
-* Serialization is the easy part. We'll put the current root value as a string, followed by a specified delimiter (e.g. `,` and defer the rest of the serialization to recursive calls.
-* Deserialization is a bit trickier. Given our pre-order traversal, it's really easy to indicate what should be the root value (the first value up to the delimiter!)
+* Empty/Null nodes can be indicated by a particular value (e.g. `#` or `X`).
+* Serialization is the easy part:
+  * We'll put the current root value as a string, followed by a specified delimiter (e.g. `,`.)
+  * We can defer the rest of the serialization to recursive calls.
+* Deserialization is a bit trickier. Given our pre-order traversal, it's really easy to indicate what should be the root value: it is the first value up to the delimiter! What about the rest?
   * Knowing where to draw the line between deserializing the left subtree and the right subtree is much harder.
-  * However, we can parse the serialized data greedily as long as we stop at the right place: i.e. if we do not append the right subtree incorrectly to the left subtree when deserializing
-  * Luckily, because we have an indicator of when a subtree stops (has no children, has both empty/null nodes), we can get around this issue.
+  * After handling the root node value, We can parse the serialized data greedily (worry about the current node and then recurse on its c hildren) as long as we stop at the right place: i.e. if we do not append the right subtree incorrectly to the left subtree when deserializing.
+  * Luckily, because we have an indicator of when a subtree stops (has no children, has both empty/null nodes), we can get around this issue by having the recursed function call on a child stop immediately (don't keep recursing down that subtree!).
   
   ```python
   # Definition for a binary tree node.
