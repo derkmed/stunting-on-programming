@@ -57,7 +57,6 @@ class Codec:
     :type data: str
     :rtype: TreeNode
     """
-
     def _deserialize(values: Iterable[str]) -> TreeNode:
       curr_val = next(values)
       if curr_val == self.EMPTY:
