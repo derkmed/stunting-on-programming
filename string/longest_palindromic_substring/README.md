@@ -39,5 +39,5 @@ class Solution:
 
 
 T = O(n<sup>2</sup>)  
-S = O(N) (for the new String, but try to avoid saving temporary substring variables to reduce used space)
+S = O(n) (for the new String, but try to avoid saving temporary substring variables to reduce used space)
 Topics = {String}
