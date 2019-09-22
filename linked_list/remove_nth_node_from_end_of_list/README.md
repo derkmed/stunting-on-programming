@@ -11,7 +11,7 @@ Thought Process:
 * There are two possible ways to solve this problem:
   1. Pre-pass through the list to determine the `size` and from there you can calculate `size - n` to determine which node to delete.
   2. Initialize two pointers, one fast and one slow, so that one pointer starts `n + 1` steps ahead. Both pointers can advance by 1 until the fast pointer is null/None.
-    * Naturally, this will end up with the slow pointer ending at the node before the node to be deleted.
+      * Naturally, this will end up with the slow pointer ending at the node before the node to be deleted.
 * In both cases, we want to take into consideration the possible edge case in which the node to be deleted is actually the head of the list.
     * This becomes an edge case because the head of the list does not have a node before it (we could add one, however that is not used in the following solution).
   
