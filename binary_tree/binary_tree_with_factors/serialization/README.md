@@ -28,8 +28,8 @@ Thought Process:
   * After handling the root node value, We can parse the serialized data greedily (worry about the current node and then recurse on its c hildren) as long as we stop at the right place: i.e. if we do not append the right subtree incorrectly to the left subtree when deserializing.
   * Luckily, because we have an indicator of when a subtree stops (has no children, has both empty/null nodes), we can get around this issue by having the recursed function call on a child stop immediately (don't keep recursing down that subtree!).
   
-  ```python
-  # Definition for a binary tree node.
+```python
+# Definition for a binary tree node.
 # class TreeNode(object):
 #     def __init__(self, x):
 #         self.val = x
