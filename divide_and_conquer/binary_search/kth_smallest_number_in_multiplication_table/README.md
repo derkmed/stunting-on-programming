@@ -1,7 +1,6 @@
 # Kth Smallest Number In Multiplication Table
 
-<b>Question:  Nearly every one have used the Multiplication Table. But could you find out the k-th smallest number quickly from the multiplication table?  
-Given the height m and the length n of a m * n Multiplication Table, and a positive integer k, you need to return the k-th smallest number in this table. </b>
+<b>Question:  Nearly every one have used the Multiplication Table. But could you find out the k-th smallest number quickly from the multiplication table? Given the height m and the length n of a m * n Multiplication Table, and a positive integer k, you need to return the k-th smallest number in this table. </b>
 
 ```
 Example  
