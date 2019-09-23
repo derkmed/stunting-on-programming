@@ -46,7 +46,7 @@ class Solution:
     return lo
 ```
 
-T = O(Mlog(MN))  
+T = O(mlog(mn))  
 S = O(1)    
   
 Topics = {Binary Search}  
