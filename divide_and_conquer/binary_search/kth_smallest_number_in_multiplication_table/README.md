@@ -27,22 +27,17 @@ Thought Process:
 
 ```python
 class Solution:
-  def findKthNumber(self, m: int, n: int, k: int) -> int:
-    
-    def hasKSmallerElements(x):
-      count = 0
-      for i in range(1, m+1):
-        count += min(n, x // i)
-      return count >= k
+  def findKthNumber(self, m: int, n: int, k: int) -> int:  
+    return sum([min(n, x // i) for i in range(1, m+1)]) >= k
       
-    lo, hi = 1, m*n
-    while lo < hi:
-      mid = (lo + hi) // 2
-      if hasKSmallerElements(mid):
-        hi = mid
-      else:
-        lo = mid + 1
-    return lo
+  lo, hi = 1, m*n
+  while lo < hi:
+    mid = (lo + hi) // 2
+    if hasKSmallerElements(mid):
+      hi = mid
+    else:
+      lo = mid + 1
+  return lo
 ```
 
 T = O(mlog(mn))  
