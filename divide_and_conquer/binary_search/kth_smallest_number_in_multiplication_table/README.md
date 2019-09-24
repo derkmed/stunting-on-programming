@@ -21,8 +21,8 @@ Thought Process:
 * If we think about binary search, we depend on some indicator to determine how to reduce our currenty [lo:hi] window of all elements (to either the lower half `[:mid] or higher half[mid+1:]).
   * What if we use a defined function `hasKSmallerElements(x)` which will return True when we know that there most definitely are k values smaller than x in the provided multiplication table (given the provided confines)?
   * We know that each row exhibits the pattern `[i, 2*i, 3*i, ..., n*i]`. To determine if there are indeed k elements in this row smaller than a provided x, well that's simply just `min(n, x // i)`.
-    * This comes from knowing that in each row (not considering the n bound), there can potentially exist some product `k*i : k*i <= x`. This would for sure indicate there are k values in the ith row smaller than or equal to x.
-    * If this product `k*i` is out of bounds (`k * i > n`) however, then we may need to check more of the other m-1 rows (`!= i`) to verify that there are indeed k smaller elements than x.
+    * This comes from knowing that in each row (not considering the n bound), there can potentially exist some product `a*i : a*i <= x` where `a` is some column value, ideally `k`: this would for sure indicate there are k values in the ith row smaller than or equal to x.
+    * If this product `a*i` is out of bounds (`a * i > n`) however, then we may need to check more of the other m-1 rows (`!= i`) to verify that there are indeed k smaller elements than x.
   * If for a particular element x, there are indeed k smaller elements than x, than we can reduce our window to look at [:mid]. Else, reduce our window to [mid+1:].
 
 ```python
