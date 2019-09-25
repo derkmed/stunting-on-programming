@@ -42,23 +42,24 @@ Thought Process:
 #         self.left = None
 #         self.right = None
 
+from typing import Tuple
 class Solution:
-    def maxPathSum(self, root: TreeNode) -> int:
-     
-      def _maxPathSum(root):
-        if not root: return (-float('inf'), -float('inf'))
+  def maxPathSum(self, root: TreeNode) -> int:
 
-        connected_left_sum, disconnected_left_sum = _maxPathSum(root.left)
-        connected_right_sum, disconnected_right_sum = _maxPathSum(root.right)
-        pivot_node_sum = connected_left_sum + connected_right_sum + root.val
-        
-        through_node_left_sum = connected_left_sum + root.val
-        through_node_right_sum = connected_right_sum + root.val
-        continuing_sum = max(through_node_left_sum, through_node_right_sum, root.val)
-        ending_sum = max(disconnected_left_sum, disconnected_right_sum, pivot_node_sum)
-        return(continuing_sum, max(continuing_sum, ending_sum))
+    def _maxPathSum(root: TreeNode) -> Tuple[int, int]:
+      if not root: return (-float('inf'), -float('inf'))
 
-      return max(_maxPathSum(root))
+      connected_left_sum, disconnected_left_sum = _maxPathSum(root.left)
+      connected_right_sum, disconnected_right_sum = _maxPathSum(root.right)
+      pivot_node_sum = connected_left_sum + connected_right_sum + root.val
+
+      through_node_left_sum = connected_left_sum + root.val
+      through_node_right_sum = connected_right_sum + root.val
+      continuing_sum = max(through_node_left_sum, through_node_right_sum, root.val)
+      ending_sum = max(disconnected_left_sum, disconnected_right_sum, pivot_node_sum)
+      return(continuing_sum, max(continuing_sum, ending_sum))
+
+    return max(_maxPathSum(root))
 ```
 
 T = O(N)
