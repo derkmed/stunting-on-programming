@@ -44,22 +44,21 @@ Thought Process:
 
 from typing import Tuple
 class Solution:
-  def maxPathSum(self, root: TreeNode) -> int:
-
-    def _maxPathSum(root: TreeNode) -> Tuple[int, int]:
-      if not root: return (-float('inf'), -float('inf'))
-
-      connected_left_sum, disconnected_left_sum = _maxPathSum(root.left)
-      connected_right_sum, disconnected_right_sum = _maxPathSum(root.right)
-      pivot_node_sum = connected_left_sum + connected_right_sum + root.val
-
-      through_node_left_sum = connected_left_sum + root.val
-      through_node_right_sum = connected_right_sum + root.val
-      continuing_sum = max(through_node_left_sum, through_node_right_sum, root.val)
-      ending_sum = max(disconnected_left_sum, disconnected_right_sum, pivot_node_sum)
-      return(continuing_sum, max(continuing_sum, ending_sum))
-
-    return max(_maxPathSum(root))
+    def maxPathSum(self, root: TreeNode) -> int:
+      max_sum = -float('inf')     
+      def _maxPathSum(root: TreeNode) -> int:
+        nonlocal max_sum
+        if not root: return -float('inf')
+        
+        r_sum = _maxPathSum(root.right) + root.val # through the right child (the non-include this node case caught by the right-child)
+        l_sum = _maxPathSum(root.left) + root.val # through the left child (the non-include this node case caught by the left-child)
+        pivot_end_sum = r_sum + l_sum - root.val        
+        max_sum = max(pivot_end_sum, r_sum, l_sum, root.val,  max_sum)
+        
+        return max(r_sum, l_sum, root.val) # these are the only three paths that can propagate up
+        
+      _maxPathSum(root)
+      return max_sum
 ```
 
 T = O(N)
