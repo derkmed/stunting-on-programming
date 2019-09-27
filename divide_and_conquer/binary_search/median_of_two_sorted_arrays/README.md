@@ -67,7 +67,7 @@ class Solution:
     median = (max_left + min_right) / 2
     
     i + j = m + n + 1 - i - j
-    j = (m + n + 1) / 2 - i ==> make sure that n > m
+    j = (m + n + 1) / 2 - i ==> make sure that n >= m
     '''
     m, n = len(nums1), len(nums2)
     if m > n:
