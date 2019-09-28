@@ -10,7 +10,7 @@ class UnionFind:
     self.p[self.find(x)] = self.find(y)
 
   def find(self, x: int):  
-    # Recursively follow the parent references
+    # Recursively follow the parent references and set to the parent of parent if possible (path compression)
     if x != self.p[x]:
       self.p[x] = self.find(self.p[x])
     return self.p[x]
