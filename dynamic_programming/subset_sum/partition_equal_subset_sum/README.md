@@ -30,7 +30,7 @@ class Solution(object):
                 dp[j] = dp[j] | (dp[j - nums[i]] if j - nums[i] >= 0 else False)
         return dp[-1]    
 ```
-T = O(N)  
+T = O(LN) where L refers to the sum of nums    
 S = O(N)  
 
 Topics: {Dynamic Programming}
