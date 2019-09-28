@@ -23,7 +23,7 @@ class Solution:
         if right_inorder: result += right_inorder
         return result
 ```
-* The more interesting solution avoids using any space whatsoever and is known as Morris Traversal.
+* The more interesting solution avoids using any space whatsoever and is known as <b>Morris Traversal</b> of a (<b>Threaded Binary Tree</b>)(https://en.wikipedia.org/wiki/Threaded_binary_tree).
 
 
 ```python
