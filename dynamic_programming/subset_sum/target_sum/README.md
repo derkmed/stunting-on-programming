@@ -20,7 +20,7 @@ Thought Process:
 * This is a variation of the subset sum problem. However, our range of values is now from `[0,k]` to `[-k,k]`. 
   * What if we shift this over to `[0, 2k]` for indexing purposes in an array?
   * Alternative could be to use a HashMap/Dictionary.
-* We can keep a memoized table of rows and iterate from top to bottom to implement dynamic programming. For any cell (i,j), it's value dp[i][j] = dp[i-1][j-nums[i]] + dp[i-1][j+nums[i]] (because we can add or subtract an element).
+* We can keep a memoized table of rows and iterate from top to bottom to implement dynamic programming. For any cell (i,j), it's value `dp[i][j] = dp[i-1][j-nums[i]] + dp[i-1][j+nums[i]]` (because we can add or subtract an element).
 * Ignore out of bounds cells. 
 * Further optimize by only storing 2 rows at a time (the previous row and the current row).
 
