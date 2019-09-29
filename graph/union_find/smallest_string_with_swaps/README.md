@@ -21,8 +21,7 @@ class Solution:
 
     n = len(s)
     union_find = UnionFind(n)
-    for i, j in pairs:
-      union_find.union(i, j)
+    for i, j in pairs: union_find.union(i, j)
 
     # Assign Union Find IDs to list of characters
     id_chars = collections.defaultdict(list)
@@ -32,10 +31,7 @@ class Solution:
     # Sort the list of characters for each ID
     for k in id_chars.keys():
       id_chars[k].sort(reverse=True)
-
-    result = []
-    for i in range(n):
-      result.append(id_chars[union_find.find(i)].pop())
-    return ''.join(result)
+      
+    return ''.join([id_chars[union_find.find(i)] for i in range(n)])
 
 ```
