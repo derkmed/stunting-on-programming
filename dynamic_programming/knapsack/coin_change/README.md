@@ -23,20 +23,28 @@ class Solution:
   def coinChange(self, coins: List[int], amount: int) -> int:
     dp = [0] * (amount+1)  
     def _coinChange(coins: List[int], amount: int) -> int:
+      '''
+      Returns the fewest number of coins needed from coins to sum up to amount.
+      Returns -1 if no solution.
+      '''
       nonlocal dp
-      if amount < 0: return -1
+      # Handle base case
       if amount == 0: return 0
-      if dp[amount] != 0: return dp[amount]
+      # Handle out-of-bounds case
+      if amount < 0: return -1
+      # Handle already seen case
+      if dp[amount-1] != 0: return dp[amount-1]
       
-      fewest_coins = -1
+      # Of all the non-negative options, find the minimum
+      fewest_coins = float('inf')
       for coin in coins:
-        coin_count = _coinChange(coins, amount - coin)
-        if coin_count >= 0:
-          if fewest_coins < 0: fewest_coins = coin_count
-          else: fewest_coins = min(fewest_coins, coin_count)
-            
-      dp[amount] = fewest_coins + 1 if fewest_coins >= 0 else -1
-      return dp[amount]
+        prev_coin_count = _coinChange(coins, amount - coin)
+        if prev_coin_count >= 0:
+          fewest_coins = min(fewest_coins, prev_coin_count)
+      
+      dp[amount-1] = fewest_coins + 1 if fewest_coins != float('inf') else -1
+      return dp[amount-1] 
+      
     return _coinChange(coins, amount)
 ```
 
