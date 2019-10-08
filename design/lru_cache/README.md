@@ -39,3 +39,6 @@ class LRUCache:
 
 T = O(1)  
 S = O(n)  
+
+
+Topics = {Design}
