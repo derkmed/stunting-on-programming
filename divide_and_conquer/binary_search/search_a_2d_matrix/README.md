@@ -46,6 +46,6 @@ class Solution:
 ```
 
 T = O(m+n)  
-S = O(1)  
+S = O(1)   
 
 Topics = {Divide and Conquer}
