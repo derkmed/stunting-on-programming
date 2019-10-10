@@ -15,10 +15,7 @@ class Node:
         self.right = None
         self.data = val
         self.left = None
-'''
-# your task is to complete this function
-# function should print the boundary view of the binary tree
-# Note: You aren't required to print a new line after every test case
+
 def printBoundaryView(root):
     
     def _printLeftBoundary(root):
