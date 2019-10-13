@@ -61,5 +61,7 @@ class Solution:
        
 ```
 
-T = O(n<sup>2</sup>) (However, this can be T(n), which is why it may be preferred over sorting)
-S = O(1)
+T = O(n<sup>2</sup>) (However, this can be T(n), which is why it may be preferred over sorting)  
+S = O(1)  
+
+Topics = {Divide And Conquer}
