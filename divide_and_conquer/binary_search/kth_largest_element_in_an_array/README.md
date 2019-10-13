@@ -10,11 +10,11 @@ Output: 5
 
 Thought Process:
 * We can sort the array in ascending order and then return the kth element from the right. This will require O(nlogn) time.
-* How about we try to optimize the average-case runtime complexity?
-* Let's employ a partitioning approach in which given a pivot element in a window of the array, we place all elements `< `the pivot element to the left and all elements `>=` the pivot element to the right.
-  * Note: <i>for the purposes of this implementation</i>, it's important that we apply the `>=` to the right and '<' as opposed to `<=` on the left and `>` on the right for the cases in which duplicate elements may appear.
-  * At the end of the partitioning, we can return the index for which the pivot element belongs in the sorted array.
-* We can repeat this process on smaller windows left or right of the pivot index, depending on its relative magnitude in compariwon to `n-k`.
+* How about we try to optimize the average-case runtime complexity, instead?
+ * Let's employ a partitioning approach in which given a pivot element in a window of the array, we place all elements `< `the pivot element to the left and all elements `>=` the pivot element to the right.
+   * Note: <i>for the purposes of this implementation</i>, it's important that we apply the `>=` to the right and '<' as opposed to `<=` on the left and `>` on the right for the cases in which duplicate elements may appear.
+   * At the end of the partitioning, we can return the index for which the pivot element belongs in the sorted array.
+ * We can repeat this process on smaller windows left or right of the pivot index, depending on its relative magnitude in compariwon to `n-k`.
 
 ```python
 from typing import Tuple
