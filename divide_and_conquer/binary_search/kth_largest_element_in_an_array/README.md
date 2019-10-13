@@ -17,12 +17,17 @@ Thought Process:
   * Note: <i>for the purposes of this implementation</i>, it's important that we apply the `>=` to the right and '<' as opposed to `<=` on the left and `>` on the right for the cases in which duplicate elements may appear.
   * At the end of the partitioning, we can return the index for which the pivot element belongs in the sorted array.
    * We can repeat this process on smaller windows left or right of the pivot index, depending on its relative magnitude in compariwon to `n-k`.
+   * To mitigate the possibility of getting hit with the worst case scenario (an array always getting sorted in descending order), we can shuffle the input array randomly prior to processing.
 
 ```python
 from typing import Tuple
 class Solution:
   
   def partition(self, nums: List[int], i: int, j: int) -> Tuple[List[int], int]: 
+    '''
+    This will choose the first element in the [i, j) window to be a pivot. It will return the index
+    that this pivot belongs in the sorted array.
+    '''
     
     def swap(nums: List[int], i: int, j: int):
       nums[i], nums[j] = nums[j], nums[i]
@@ -37,6 +42,8 @@ class Solution:
     return (nums, j)
   
   def findKthLargest(self, nums: List[int], k: int) -> int:
+    random.shuffle(nums)
+    
     result_index = 0    
     lo, hi, k_complement = 0, len(nums) - 1, len(nums) - k
     while result_index <= k_complement:
