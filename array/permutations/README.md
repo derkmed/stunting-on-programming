@@ -33,7 +33,7 @@ class Solution:
     
         if not nums: return
         
-        # First find the starting index for the strictly decreasing segment
+        # First find the starting index for the decreasing segment
         n = len(nums)
         i = n-2
         while i >= 0 and nums[i] >= nums[i+1]: i -= 1
@@ -44,12 +44,12 @@ class Solution:
             nums = nums.reverse()
             return
             
-        # Now find the index to swap with the index prior to the strictly decreasing segment
+        # Now find the index to swap with the index prior to the decreasing segment
         j = n-1
         while j >= decrease_index and nums[j] <= nums[decrease_index-1]: j -= 1
         nums[decrease_index-1], nums[j] = nums[j] , nums[decrease_index-1]
         
-        # After the swap, we can simply reverse the modified strictly decreasing segment
+        # After the swap, we can simply reverse the modified decreasing segment
         nums[decrease_index:] = reversed(nums[decrease_index:])
 ```
 
