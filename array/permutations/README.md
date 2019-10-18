@@ -13,8 +13,19 @@ Thought Process:
   * A "Decreasing" segment of the permutation.
     * All numbers in this segment are strictly decreasing or equal (for duplicates).
     * Once we've exhausted the possible permutations for this segment, we will have to include the index before this segment into a new larger permutation search space.  
+    * We must swap it with the smallest element in the "decreasing" segment larger than itself.
+    * We can then reverse the modified "decreasing" segment.
 * Edge Case Considerations:
   * Make sure to handle duplicate digits/numbers.
+
+Example:
+* `[1 2 5 6 4 3]` can be broken up into `[1 2 5]` ("fixed-so-far") and `[6 4 3]` ("decreasing").
+* We know that there's no number starting with `[1 2 5]` that is larger than the current `[1 2 5 6 4 3]`
+  * We'll have to expand our permutation search space to include the `5`
+  * Let's swap it with the smallest element larger than itself (`6`).
+  * We now have `[1 2 6]` and `[5 4 3]`
+  * We can simply reverse the "decreasing" segment and add it back to the list to get the next permutation in ascending order (`[1 2 6 3 4 5]`).
+
 
 ```python
 class Solution:
