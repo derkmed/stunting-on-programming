@@ -8,12 +8,12 @@ Thought Process:
   * We go through each index `i` and select some value `v`. We can treat this temporarily as fixed in a sense.
   * For all the indices after this "fixed" index, the selection space is constrained to no longer include `v`.
   * Once all the permutations from `i+1` onwards have been selected however, we now need to backtrack and allow the `v`@`i` to be swapped with another element in the selection space for `i` onwards.
-* We can break the current permutation into the following components:
-  * The "Fixed-So-Far" segment of the permutation.
-  * A "Decreasing" segment of the permutation.
+* We can split the current permutation into the two following components:
+  * The "fixed" segment of the permutation.
+  * A "decreasing" segment of the permutation: this is the segment that we are free to permutate.
     * All numbers in this segment are strictly decreasing or equal (for duplicates).
-    * Once we've exhausted the possible permutations for this segment, we will have to include the index before this segment into a new larger permutation search space.  
-    * We must swap it with the smallest element in the "decreasing" segment larger than itself.
+    * Once we've exhausted the possible permutations for this segment, we will have to include the last index of the "fixed" segment (the one before this segment) in our permutation space: the cardinality of the permutation space has increased by 1 element.
+    * We must swap the new element with the smallest element in the "decreasing" segment larger than itself.
     * We can then reverse the modified "decreasing" segment.
 * Edge Case Considerations:
   * Make sure to handle duplicate digits/numbers.
