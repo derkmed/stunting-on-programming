@@ -22,6 +22,7 @@ Thought Process:
 * We definitely need some sort of mapping data structure. How about a hash map?
 * Now for each key, we can run binary search on the guaranteed sorted lists of timestamps to find the relevant value for that key
 
+
 ```python
 
 class TimeMap:
