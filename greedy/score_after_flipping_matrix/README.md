@@ -35,7 +35,7 @@ class Solution:
         result += max(col_sum, m - col_sum) * 2 ** (n - 1 - c)
       return result
 ```
-T = O(RC)  
+T = O(rc) (r being number of rows and c being number of columns)
 S = O(1)  
 
 Topics = {Greedy}
