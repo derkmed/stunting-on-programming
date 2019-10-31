@@ -53,5 +53,5 @@ class Solution:
     return False        
 ```
 
-T = O(mn) where m is the length of the word and n is the size of the board
+T = O(mn) where m is the length of the word and n is the size of the board  
 S = O(m) where m is the length of the word
