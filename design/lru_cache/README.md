@@ -41,4 +41,63 @@ T = O(1)
 S = O(n)  
 
 
+Assuming you cannot use an `OrderedDict`, here is another implementation:
+
+```python
+
+class Node:
+
+  def __init__(self, key: int, value: int):
+    self.key = key
+    self.value = value
+    self.prev = None
+    self.next = None 
+
+class LRUCache:
+ 
+  def __init__(self, capacity: int):
+    self.dict = dict()
+    self.capacity = capacity
+    self.head = Node(0, 0)
+    self.tail = Node(0, 0)
+    self.head.next = self.tail
+    self.tail.prev = self.head
+    
+  def get(self, key: int):
+    if key in self.dict:
+      node = self.dict[key]
+      self.removeNode(node)
+      self.addNode(node)
+      return node.value
+    return -1
+  
+  def put(self, key: int, value: int):
+    if key not in self.dict:
+      node = Node(key, value)  
+      self.dict[key] = node
+      self.addNode(node)
+      if len(self.dict) > self.capacity:
+        removedNode = self.head.next
+        self.removeNode(removedNode)
+        del self.dict[removedNode.key]
+    else:
+      node = self.dict[key]
+      self.removeNode(node)
+      node.value = value
+      self.addNode(node)
+    return
+    
+  def removeNode(self, node: Node):
+    prev = node.prev
+    nxt = node.next
+    prev.next = nxt
+    nxt.prev = prev   
+    
+  def addNode(self, node: Node):    
+    node.prev = self.tail.prev
+    self.tail.prev.next = node
+    self.tail.prev = node
+    node.next = self.tail
+```
+
 Topics = {Design}
