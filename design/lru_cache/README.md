@@ -8,6 +8,7 @@
 
 Thought Process:
 * Double-linked list (nodes hold key + value pair) w/ head + tail references and a constant-time-lookup mapping between keys and respective nodes?
+  * Once we can focus on the add (to the end) and remove (random access) aspect of this list, the code is pretty straightforward.
 * In python, simply use `OrderedDict`.
   * Use `OrderedDict.popitem(False)` to delete the first element (the `False` is for FIFO).
 
