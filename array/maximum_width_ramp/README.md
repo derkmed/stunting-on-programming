@@ -1,11 +1,16 @@
 # Maximum Width Ramp
 
 <b>Question:</b>
-<b>Given an array A of integers, a ramp is a tuple (i, j) for which i < j and A[i] <= A[j].  The width of such a ramp is j - i. Find the maximum width of a ramp in A.  If one doesn't exist, return 0. </b>
+<b>Given an array A of integers, a ramp is a tuple (i, j) for which i < j and A[i] <= A[j].  The width of such a ramp is j - i.</b>
+<b>Find the maximum width of a ramp in A.  If one doesn't exist, return 0. </b>
 
 
 Thought Process:
-
+* This is very similar to the "max stock profit problem."
+* We essentially want to maximize the distance between (i, j) such that A[i] <= A[j].
+  * We can run the max stock profit problem solution (linear iteration keeping track of the minimum seen so far and the largest gap seen so far) on the indices.
+  * However, we need to constrain the order of indices based on the values at those indices. Thus, we sort the range of indices based on their corresponding array values.
+  
 
 ```python
 class Solution:
