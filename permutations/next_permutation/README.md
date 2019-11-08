@@ -29,28 +29,21 @@ Example:
 
 ```python
 class Solution:
-    def nextPermutation(self, nums: List[int]) -> None:
-    
-        if not nums: return
+  def nextPermutation(self, nums: List[int]) -> None:
+      
+    # i represents the start of the decreasing segment
+    i = len(nums) - 1
+    while i > 0 and nums[i-1] >= nums[i]: i -= 1
+
+
+    if i == 0:
+      nums.reverse()
+    else:
+      j = i
+      while j < len(nums)-1 and nums[j+1] > nums[i-1]: j += 1
+      nums[i-1], nums[j] = nums[j], nums[i-1]
+      nums[i:] = reversed(nums[i:])
         
-        # First find the starting index for the decreasing segment
-        n = len(nums)
-        i = n-2
-        while i >= 0 and nums[i] >= nums[i+1]: i -= 1
-        decrease_index = i+1
-        
-        # Edge case for largest permutation
-        if decrease_index <= 0:
-            nums = nums.reverse()
-            return
-            
-        # Now find the index to swap with the index prior to the decreasing segment
-        j = n-1
-        while j >= decrease_index and nums[j] <= nums[decrease_index-1]: j -= 1
-        nums[decrease_index-1], nums[j] = nums[j] , nums[decrease_index-1]
-        
-        # After the swap, we can simply reverse the modified decreasing segment
-        nums[decrease_index:] = reversed(nums[decrease_index:])
 ```
 
 T = O(n)  
