@@ -10,8 +10,8 @@ Thought Process:
 ```python
 class Solution: 
   def replaceWithRank(self, arr: List[int]) -> List[int]:
-    index_sorted_on_value = sorted([(i, elem) for i, elem in enumerate(arr)], key=lambda tup: tup[1])
-    index_to_rank = {tup[0]: i+1 for i, tup in enumerate(x)}
+    index_sorted_on_value = sorted([i for i in range(len(arr))], key=lambda i: arr[i])
+    index_to_rank = {index: i+1 for i, index in enumerate(index_sorted_on_value)}
     return  [index_to_rank[i] for i in range(len(arr))]   
 ```
 
