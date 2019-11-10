@@ -19,7 +19,7 @@ Thought Process:
   * We calculate the binary search `mid`.
   * The element @ `mid` can either:
     * `== target`:
-      * update result if possible.
+      * update `result` if possible.
       * recurse on the windows left and right (exclusive) of the `mid` element.
     * `< target`: overwrite the left boundary to `mid+1`
     * `> target`: overwrite the right boundary to `mid-1`
