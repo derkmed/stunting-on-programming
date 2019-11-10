@@ -52,7 +52,7 @@ class Solution:
     return result
 ```
    
-T = O(nlogn) 
+T = O(logn)  
 S = O(1) (O(logn) if you count stack frames from recursion)   
   
 Topics = {Array, Binary Search} 
