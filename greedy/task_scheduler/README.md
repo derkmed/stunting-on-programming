@@ -75,6 +75,16 @@ Advanced Thought Process:
   * The solution <i>appears</i> that it will always be `(maximum_task_count - 1) * (n + 1) + tasks_with_max_count`
   * Edge case is to lower bound the above value by the # of all tasks (consider the case in which `n=0`).
 
+```python
+class Solution:
+  def leastInterval(self, tasks: List[str], n: int) -> int:
+    task_freqs = collections.Counter(tasks)
+    max_freq = max(task_freqs.values())
+    max_freq_tasks = sum(task_freqs[i] == max_freq for i in task_freqs.keys())
+    return max((max_freq - 1) * (n + 1) + max_freq_tasks, len(tasks))
+```
+
+T = O(n)  
+S = O(1)  
+
 Topics = {Greedy, Priority Queue, Queue, Array}
-
-
