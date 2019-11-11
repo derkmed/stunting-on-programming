@@ -55,7 +55,21 @@ class Solution:
       
     return cycles                  
 ```
-T = O(nlogn)
-S = O(n)
+T = O(nlogn)  
+S = O(n)  
+  
+Advanced Thought Process:
+* We can do this purely from an analytical standpoint.
+* e.g. Take the tasks `['A', 'A', 'A', 'A', 'B', 'B', 'B', 'C', 'D']` with a cycle cooldown of 2.
+* The solution might look something like: `['A', 'B', 'C', 'A', 'B', 'D', 'A', 'B', 'idle', 'A']`
+* But another way to view this is as follows:
+  * 
+  | A | B | C |
+  | A | B | D |
+  | A | B | idle |
+  | A |
+
 
 Topics = {Greedy, Priority Queue, Queue, Array}
+
+
