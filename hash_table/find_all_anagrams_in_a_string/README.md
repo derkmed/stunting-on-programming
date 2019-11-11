@@ -48,20 +48,21 @@ Thought Process:
 * Cleaner and easier to reason if we create nested `_decrement()` and `increment()` functions.
   
 ```python
-class Solution:
   def findAnagrams(self, s: str, p: str) -> List[int]:
-    # Edge case to consider
+    # Edge case to consider (assume non-empty/non-null inputs)
     if len(p) > len(s): return []
     
     p_counts = collections.Counter(p)
     required_chars = set(p)
     
+    # decrements a character's count, only for characters of interest
     def _decrement(c: str):
       nonlocal p_counts
       if c in p_counts:
         p_counts[c] -= 1
         if p_counts[c] == 0: required_chars.remove(c)
-        
+      
+    # increments a character's count, only for characters of interest
     def _increment(c: str):
       nonlocal p_counts
       if c in p_counts:
@@ -72,13 +73,13 @@ class Solution:
     for i in range(0, len(p)-1):      
       _decrement(s[i])
     
-    # Now we simply iterate through the len(s)-len(p) possible end/start indices
+    # Now we simply iterate through the len(s)-len(p) possible windows
     result = []
     for i_end in range(len(p)-1, len(s)):
       _decrement(s[i_end])
-      if not required_chars: 
-        result.append(i_end - len(p) + 1)  
-      _increment(s[i_end - len(p) + 1])
+      i_start = i_end - len(p) + 1
+      if not required_chars: result.append(i_start)  
+      _increment(s[i_start])
     return result
 ```
 
