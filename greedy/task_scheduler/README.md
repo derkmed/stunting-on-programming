@@ -60,15 +60,20 @@ S = O(n)
   
 Advanced Thought Process:
 * We can do this purely from an analytical standpoint.
-* e.g. Take the tasks `['A', 'A', 'A', 'A', 'B', 'B', 'B', 'C', 'D']` with a cycle cooldown of 2.
-* The solution might look something like: `['A', 'B', 'C', 'A', 'B', 'D', 'A', 'B', 'idle', 'A']`
+* e.g. Take the tasks `['A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'C', 'D']` with a cycle cooldown of 2.
+* The solution might look something like: `['A', 'B', 'C', 'A', 'B', 'D', 'A', 'B', 'idle', 'A', 'B']`
 * But another way to view this is as follows:
-  * 
-  | A | B | C |
-  | A | B | D |
-  | A | B | idle |
-  | A |
-
+  
+   | offset | 0 | 1 | 2 |
+   | --- | --- | --- | --- |
+   | 0 | A | B | C |
+   | 3 | A | B | D |
+   | 6 | A | B | idle |
+   | 9 | A | B |  
+   
+* If we observe closely, we can see there's something particularly mathematical in this approach.
+  * The solution <i>appears</i> that it will always be `(maximum_task_count - 1) * (n + 1) + tasks_with_max_count`
+  * Edge case is to lower bound the above value by the # of all tasks (consider the case in which `n=0`).
 
 Topics = {Greedy, Priority Queue, Queue, Array}
 
