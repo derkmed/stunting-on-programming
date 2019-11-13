@@ -29,4 +29,5 @@ Thought Process:
   | [1, 2, 1, <b><i>2, 3</i></b>] | 4 | [2, 3] | [3] | [1, 2, 3] | [3] | 2 - 1 = 1 |
 
   * \# solutions = 7
-
+  * What makes this confusing is the indices are zero-based. If you are still confused, try converting this to one-based and it will become clearer.
+one-based and it will become clearer.
