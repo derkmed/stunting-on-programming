@@ -20,12 +20,12 @@ Thought Process:
 * The two windows will always be right-aligned, but with varying left boundaries: keep in mind that the sub-window will have a higher left-index.
 * Thought Process Example:
 
-| Data | Index | Large Window | Small Window
-|----|----|----|----|
-| [1, 2, 1, 2, 3] | 0 | [1] | [1] |
-| [1, 2, 1, 2, 3] | 1 | [1, 2] | [2] |
-| [1, 2, 1, 2, 3] | 2 | [1, 2, 1] | [1] |
-| [1, 2, 1, 2, 3] | 3 | [1, 2, 1, 2] | [2] |
-| [1, 2, 1, 2, 3] | 4 | [2, 3] | [3] |
+| Data | Index | Large Window | Small Window | Corresponding Solutions | Ignored Solutions |
+|----|----|----|----|----|----|
+| [<b><i>1</i></b>, 2, 1, 2, 3] | 0 | [1] | [1] | | |
+| [<b><i>1, 2</i></b>, 1, 2, 3] | 1 | [1, 2] | [2] | [1, 2,] | [1] |
+| [<b><i>1, 2, 1</i></b>, 2, 3] | 2 | [1, 2, 1] | [1] | [1, 2, 1], [2, 1] | [1] |
+| [<b><i>1, 2, 1, 2</i></b>, 3] | 3 | [1, 2, 1, 2] | [2] | [1, 2, 1, 2], [2, 1, 2], [1, 2] | [2] |
+| [1, 2, 1, <b><i>2, 3</i></b>] | 4 | [2, 3] | [3] | [1, 2, 3] | [3] |
 
 
