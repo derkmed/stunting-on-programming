@@ -10,9 +10,14 @@
 
 Thought Process:
 * Consider the structure of a BST: given a root, the nodes on the left are smaller and the nodes on the right are larger.
-* Keep a growing stack of nodes to visit, with the invariant that the next smallest node is on the top.
+* A naive solution would entail inorder traversal and copying each element into an array, but this takes up more than O(h) memory, even amortized.
+  * What we like about this is that the left subtree will always appear first (the smaller elements are naturally always first)
+* Controlled recursion: 
+  * Keep a growing stack of nodes to visit, with the invariant that the next smallest node is on the top. This will emulate the inorder traversal exhbited in the naive solution. 
   * This stack will essentially come from iterating among all left nodes from the root down.
-  * Whenever you pop a node, you must expand its right (the left will have already been visited, naturally).
+  * Whenever you pop a node:
+   1. If a leaf, you do nothing
+   2. If not a leaf, you must expand its right (the left will have already been visited, naturally).
   
   
 ```python
