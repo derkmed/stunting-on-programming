@@ -21,22 +21,27 @@ Thought Process:
 ```python
 class Solution:
   def numIslands(self, grid: List[List[str]]) -> int:
-    VISITED = 'X'
+    
+    def _is_valid(i: int, j: int):
+      return 0 <= i < len(grid) and 0 <= j < len(grid[0])
+    
+    def _dfs(i: int, j: int):
+      stack = [(i, j)]
+      grid[i][j] = '0'
+      while stack:
+        x, y = stack.pop()
+        grid[x][y] = '0'
+        for dx, dy in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
+          if _is_valid(x+dx, y+dy) and grid[x+dx][y+dy] == '1': 
+            stack.append((x+dx, y+dy))
+      
     result = 0    
     for i in range(len(grid)):
       for j in range(len(grid[0])):
-        if grid[i][j] == VISITED or grid[i][j] == '0': 
-          continue
-        stack = [(i, j)]
-        while stack:
-          x, y = stack.pop()
-          grid[x][y] = VISITED
-          for dx, dy in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
-            if 0 <= x+dx < len(grid) and 0 <= y + dy < len(grid[0]) and \
-              grid[x+dx][y+dy] == '1': 
-              stack.append((x+dx, y+dy))
+        if grid[i][j] != '1': continue
+        _dfs(i, j)
         result += 1
-    return result        
+    return result          
 ```
 
 T = O(mn)    
