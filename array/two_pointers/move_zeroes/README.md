@@ -1,6 +1,6 @@
 # Move Zeroes
 
-<B>Question: Given an array `nums`, write a function to move all `0`'s to the end of it whiel maintaining the relative order of the non-zero elements.</b>
+<B>Question: Given an array `nums`, write a function to move all `0`'s to the end of it while maintaining the relative order of the non-zero elements.</b>
 
 ```
 Example
