@@ -38,7 +38,7 @@ class Solution:
 T = O(nlogn)    
 S = O(n)    
 
-## O(n) space solution:
+### O(1) space solution:
 
 Thought Process:
 * Modify the list in place to save space!
