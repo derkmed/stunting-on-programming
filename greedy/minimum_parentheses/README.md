@@ -41,7 +41,7 @@ class Solution:
       if balance == -1:
         result += 1
         balance += 1
-    return 
+    return result
 ```
 
 T = O(n)  
