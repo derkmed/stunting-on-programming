@@ -31,5 +31,5 @@ class Solution:
     return result     
 ```
 
-T = O(N)  
-S = O(N) (however, knowing that our alphabet is constrained, we could say O(1) because there are only 26 lowercase alphabet characters)
+T = O(n)  
+S = O(n) (however, knowing that our alphabet is constrained, we could say O(1) because there are only 26 lowercase alphabet characters)
