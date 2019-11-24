@@ -70,14 +70,15 @@ class Solution:
     
     # observe: the maximum distance is 2000!
     bike_indices, worker_indices = [bi for bi in range(len(bikes))], [wi for wi in range(len(workers))]
-    index_pairs_iter = itertools.product(worker_indices, bike_indices)
-    # index_pairs_iter will naturally have the lower-worker pair processed first
+    index_pairs_iter = itertools.product(worker_indices, bike_indices) # index_pairs_iter will naturally place the lower-worker pair first!
     
+    # generate buckets of pairs
     pair_for_distance = [[] for _ in range(MAX_DIST)]
     for index_pair in index_pairs_iter:
       wi, bi = index_pair
       pair_for_distance[_dist(bikes[bi], workers[wi])].append((wi, bi))
       
+    # assign workers to bicycles
     worker_assignments = [-1 for _ in range(len(workers))]
     assigned_bikes, assigned_workers = set(), set()
     for pairs_with_dist in pair_for_distance:
@@ -87,6 +88,7 @@ class Solution:
           worker_assignments[wi] = bi
           assigned_bikes.add(bi)
           assigned_workers.add(wi)
+        # we can probably break out of this loop here early, but it is omitted for readability
 
     return worker_assignments
 ```
