@@ -26,9 +26,10 @@ Thought Process:
     * ...
     * a2, b1, <b>c3, d4</b>
     * ...
-  * We should use memoization!
+  * Notice in the above there are redundant subproblems that we solve: we should use memoization!
   * We'll use a bitarray to indicate assigned bikes (need a hashable type for memoization!)
-  
+* We should eventually find an assignment of combinations with the minimum total distance sum.
+
 ```python
 from typing import Set
 
