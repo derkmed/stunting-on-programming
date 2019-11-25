@@ -51,3 +51,5 @@ class Solution:
         if assigned_bikes & 0b1 << bi == 0:
           heapq.heappush(heap, (cost + _dist(wi, bi), wi + 1, assigned_bikes | (0b1 << bi)))
 ```
+
+Topics = {Dijkstra, Heap}
