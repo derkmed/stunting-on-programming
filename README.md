@@ -1,2 +1,5 @@
->>> I hAtE lEeTcOdE!
-But seriously though
+Welcome. These are all the interview questions I have personally come across and/or found helpful for studying. 
+
+If you're here, you're either future Derek or one of my friends who is currently on the job search. 
+
+I recommend taking a look at categories that you may have trouble solving. Part of becoming better at these things just involves practice and pattern recognition. I've tried to summarize the necessary thought process to reach the provided solution to each problem in a manner that is as succinct as possible. This way, instead of memorizing the solution, you may find memorizing the key observations and thoughts in the thought process more helpful.
