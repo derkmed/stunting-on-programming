@@ -16,6 +16,12 @@
 
 
 
+Thought Process:
+* Let's keep a buffer for the current line
+* Whenever adding a new word will breach the maxWidth, it's time to append the justified version of the current buffer
+* Append spaces to each word in the current line buffer, round-robin style left-to-right
+* Simple left justification of the final line at the end
+
 
 ```
 class Solution:
