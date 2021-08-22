@@ -14,10 +14,10 @@ Return the k pairs (u1, v1), (u2, v2), ..., (uk, vk) with the smallest sums.
 Though Process:
 * Observing the "sorting" element of this problem may indicate there may be an effective solution involving a priority-queue (min-heap).
 * Visualizing the problem as an x-y graph in which the axes correspond to the list indices can be super helpful.
-** You can start with the (0, 0) coordinate by "evaluating" it and adding its neighbors for the next iteration of evaluation. How do we identify the right neighbors? 
-** One way to think about which neighbors to add to the queue could be simply advancing to the next element in either list in such a way that we do not record duplicate pairs
-** You can start with the (0, 0) coordinate by "evaluating" it and adding its neighbors for the next iteration of evaluation. How do we identify the right neighbors? 
-** One way to think about which neighbors to add to the queue could be simply advancing to the next element in either list in such a way that we do not record duplicate pairs. Given the nature of this though, you'll have to eventually maintain some sort of `set` to filter out already-visited coordinates.
+  * You can start with the (0, 0) coordinate by "evaluating" it and adding its neighbors for the next iteration of evaluation. How do we identify the right neighbors? 
+  * One way to think about which neighbors to add to the queue could be simply advancing to the next element in either list in such a way that we do not record duplicate pairs
+  * You can start with the (0, 0) coordinate by "evaluating" it and adding its neighbors for the next iteration of evaluation. How do we identify the right neighbors? 
+  * One way to think about which neighbors to add to the queue could be simply advancing to the next element in either list in such a way that we do not record duplicate pairs. Given the nature of this though, you'll have to eventually maintain some sort of `set` to filter out already-visited coordinates.
 * Because the two lists are sorted, you can do something especially clever that removes the need for an additional `set` for filtering out visited coordinates.
 
 
