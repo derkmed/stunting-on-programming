@@ -15,10 +15,9 @@ Though Process:
 * Observing the "sorting" element of this problem may indicate there may be an effective solution involving a priority-queue (min-heap).
 * Visualizing the problem as an x-y graph in which the axes correspond to the list indices can be super helpful.
   * You can start with the (0, 0) coordinate by "evaluating" it and adding its neighbors for the next iteration of evaluation. How do we identify the right neighbors? 
-  * One way to think about which neighbors to add to the queue could be simply advancing to the next element in either list in such a way that we do not record duplicate pairs
-  * You can start with the (0, 0) coordinate by "evaluating" it and adding its neighbors for the next iteration of evaluation. How do we identify the right neighbors? 
-  * One way to think about which neighbors to add to the queue could be simply advancing to the next element in either list in such a way that we do not record duplicate pairs. Given the nature of this though, you'll have to eventually maintain some sort of `set` to filter out already-visited coordinates.
-* Because the two lists are sorted, you can do something especially clever that removes the need for an additional `set` for filtering out visited coordinates.
+  * One way to think about which neighbors to add to the queue could be simply advancing to the next element in either list in such a way that we do not record duplicate pairs. You can start with the (0, 0) coordinate by "evaluating" it and adding its neighbors for the next iteration of evaluation. How do we identify the right neighbors? 
+  * You'll have to eventually maintain some sort of `set` to filter out already-visited coordinates. Is this fully necessary?
+* Because the two lists are sorted, you can do something especially clever that removes the need for an additional `set` for filtering out visited coordinates. We know that once we record a coordinate, we should consider the coordinate produced by advancing the "other" list pointer by one element. However, we might not necessarily need to advance the "this" list pointer by one element, <b>EXCEPT</b> if we're still on the first element. This should be clear especially because the lists are sorted.
 
 
 ```
