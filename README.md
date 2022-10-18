@@ -1,4 +1,4 @@
-Welcome. These are all the interview questions I have personally come across and/or found particularly helpful for myself for studying. 
+Welcome. These are all the interview questions I have personally come across and/or found particularly helpful for myself for studying(*unaffiliated* with my previous or current employer(s)). 
 
 If you're here, you're either future Derek or one of my friends who is currently on the job search. 
 
